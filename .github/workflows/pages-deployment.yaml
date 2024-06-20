@@ -1,0 +1,40 @@
+name: Website Deploy ⚡
+
+on:
+  push:
+    branches:
+      - prod
+      - preprod
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    name: Deploy website - Cloudflare Pages ⚡
+    steps:
+      - name: Checkout ${{ github.ref_name }} 📥
+        uses: actions/checkout@v4
+
+      - name: Enable Corepack 📦
+        run: corepack enable
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: yarn
+          cache-dependency-path: yarn.lock
+
+      - name: Install NodeJS Dependencies 📦
+        run: yarn install --immutable
+
+      - name: Deploy website - Cloudflare Pages ⚡
+        uses: cloudflare/pages-action@1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: 'ginetta-tonic-festival'
+          directory: './src'
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}

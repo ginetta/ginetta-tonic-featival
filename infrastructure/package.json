@@ -1,0 +1,18 @@
+{
+  "name": "ginetta-tonic-festival",
+  "description": "Pulumi IaC configuration",
+  "main": "config.ts",
+  "private": true,
+  "author": "@mountainash",
+  "scripts": {
+    "setenv": "set -o allexport; source .env && set +o allexport"
+  },
+  "devDependencies": {
+    "@types/node": "20.14.5"
+  },
+  "dependencies": {
+    "@pulumi/cloudflare": "5.31.0",
+    "@pulumi/pulumi": "3.120.0"
+  },
+  "packageManager": "yarn@4.3.0"
+}
