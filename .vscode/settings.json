@@ -2,7 +2,15 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "cSpell.words": [
+    "endtime",
+    "Ginetta",
     "nextjs",
-    "Pulumi"
+    "Pulumi",
+    "Rieterstrasse",
+    "timeinterval",
+    "Webflow"
   ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
 }
