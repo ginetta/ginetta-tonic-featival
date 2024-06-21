@@ -34,7 +34,7 @@ pulumi up
 As the project was setup on Cloudflare Pages using the Web UI, the following commands were used to pull/import the config for the project.
 
 ```bash
-pulumi import cloudflare:index/pagesProject:PagesProject ginetta-tonic-festival ${CLOUDFLARE_ACCOUNT_ID}/ginetta-tonic-festival
+pulumi import cloudflare:index/pagesProject:PagesProject ginetta-tonic-festival $CLOUDFLARE_ACCOUNT_ID/ginetta-tonic-festival
 
-pulumi import cloudflare:index/pagesDomain:PagesDomain pagesDomain ${CLOUDFLARE_ACCOUNT_ID}/ginetta-tonic-festival/festival.ginetta.net
+pulumi import cloudflare:index/pagesDomain:PagesDomain ginetta-tonic-festival $CLOUDFLARE_ACCOUNT_ID/ginetta-tonic-festival/festival.ginetta.net
 ```
