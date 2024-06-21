@@ -24,6 +24,19 @@ jobs:
       - name: Checkout ${{ github.ref_name }} 📥
         uses: actions/checkout@v4
 
+      - name: Enable Corepack 📦
+        run: corepack enable
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: yarn
+          cache-dependency-path: yarn.lock
+
+      - name: Install Dependencies 📦
+        run: yarn install --immutable
+        working-directory: ${{ env.PULUMI_WORKING_DIRECTORY }}
+
       - name: PR previews
         if: ${{ github.event_name == 'pull_request' }}
         uses: pulumi/actions@v5
