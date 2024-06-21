@@ -24,16 +24,6 @@ jobs:
       - name: Checkout ${{ github.ref_name }} 📥
         uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: yarn
-          cache-dependency-path: yarn.lock
-
-      - name: Install Dependencies 📦
-        run: yarn install --immutable
-        working-directory: ${{ env.PULUMI_WORKING_DIRECTORY }}
-
       - name: PR previews
         if: ${{ github.event_name == 'pull_request' }}
         uses: pulumi/actions@v5
@@ -49,16 +39,3 @@ jobs:
           command: up
           stack-name: ${{ env.PULUMI_STACK_NAME }}
           work-dir: ${{ env.PULUMI_WORKING_DIRECTORY }}
-
-      # If you'd like to run your Pulumi application outside of the official GitHub Action
-
-      #- name: Install Pulumi CLI
-      #  uses: pulumi/setup-pulumi@v2
-
-      #- name: PR previews
-      #  run: pulumi preview -s $PULUMI_STACK_NAME --cwd $PULUMI_WORKING_DIRECTORY
-      #  if: ${{ github.event_name == 'pull_request' }}
-
-      #- name: Apply infrastructure update
-      #  run: pulumi update --yes -s $PULUMI_STACK_NAME --cwd $PULUMI_WORKING_DIRECTORY
-      #  if: ${{ github.event_name == 'push' }}
