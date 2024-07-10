@@ -729,12 +729,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:20.14.7":
-  version: 20.14.7
-  resolution: "@types/node@npm:20.14.7"
+"@types/node@npm:20.14.10":
+  version: 20.14.10
+  resolution: "@types/node@npm:20.14.10"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 10c0/6211ffe86f769a58617e3bdca58610256021ef54bd99d2c442ee6109196cd6ee8e0bcd1cfac0e39bf4bb353f8900fa5fae540485a03816bd91ad1f86a0e18512
+  checksum: 10c0/0b06cff14365c2d0085dc16cc8cbea5c40ec09cfc1fea966be9eeecf35562760bfde8f88e86de6edfaf394501236e229d9c1084fad04fb4dec472ae245d8ae69
   languageName: node
   linkType: hard
 
@@ -1195,7 +1195,7 @@ __metadata:
   dependencies:
     "@pulumi/cloudflare": "npm:5.33.1"
     "@pulumi/pulumi": "npm:3.121.0"
-    "@types/node": "npm:20.14.7"
+    "@types/node": "npm:20.14.10"
   languageName: unknown
   linkType: soft
 
