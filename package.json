@@ -8,7 +8,8 @@
   "scripts": {
     "dev": "wrangler pages dev",
     "prepare": "husky",
-    "pre-push": "yarn test:formatting",
+    "pre-push": "yarn test",
+    "test": "yarn test:formatting",
     "test:formatting": "prettier --check './**/*.{ts,tsx,js}'",
     "test:formatting:fix": "prettier --write './**/*.{ts,tsx,js}'"
   },
