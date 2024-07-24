@@ -53,6 +53,22 @@
       .custom-cursor {
         pointer-events: none;
       }
+      /* the JS timout for the clock takes a while to load, and we don't want to show 0:00:00 */
+      #js-clock {
+        animation-name: fadeIn;
+        animation-duration: 1s;
+        animation-delay: 1s;
+        animation-fill-mode: forwards;
+        opacity: 0;
+      }
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
     </style>
     <script>
       WebFont.load({
@@ -82,30 +98,6 @@
 
   <body class="body">
     <div class="wrapper">
-      <div
-        data-w-id="ec6d5046-9dab-5904-143f-c0d59e42eeb7"
-        style="display: block"
-        class="transition"
-      >
-        <div class="transition-trigger"></div>
-        <div class="transition-content">
-          <div class="transition-bg">
-            <div
-              data-w-id="f34e2309-33ac-a624-ca4e-59dc2e1b85fa"
-              class="lottie-animation"
-              data-animation-type="lottie"
-              data-src="documents/Ginetta_Loading_Anim.json"
-              data-loop="0"
-              data-direction="1"
-              data-autoplay="1"
-              data-is-ix2-target="0"
-              data-renderer="svg"
-              data-default-duration="3.033333333333333"
-              data-duration="0"
-            ></div>
-          </div>
-        </div>
-      </div>
       <div pointer-events="none" class="custom-cursor">
         <div class="cursor-wrapper">
           <div
@@ -125,7 +117,6 @@
             class="cursor-circle-1"
           ></div>
           <div
-            data-w-id="0dfaad45-cf44-4a34-7361-d7cac313add5"
             class="topic-wrapper"
           >
             <img
@@ -223,40 +214,12 @@
         <div class="base-container w-container">
           <div class="main-title">
             <span
-              data-w-id="61893f6e-f596-88b9-947d-77adc68fe8e7"
-              style="
-                -webkit-transform: translate3d(0, -2vw, 0) scale3d(1, 1, 1)
-                  rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                -moz-transform: translate3d(0, -2vw, 0) scale3d(1, 1, 1)
-                  rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                -ms-transform: translate3d(0, -2vw, 0) scale3d(1, 1, 1)
-                  rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                transform: translate3d(0, -2vw, 0) scale3d(1, 1, 1) rotateX(0)
-                  rotateY(0) rotateZ(0) skew(0, 0);
-                filter: blur(10px);
-                opacity: 0;
-              "
               class="title-span"
               >GINETTA<br /></span
             ><span
-              data-w-id="00fe0ee6-04e0-d349-53b5-c395c2282f9e"
-              style="filter: blur(10px); opacity: 0"
               class="title-span"
               >TONIC<br /></span
             ><span
-              data-w-id="cf1fb439-8e08-8d01-8394-b31e5d0cd3a7"
-              style="
-                -webkit-transform: translate3d(0, 2vw, 0) scale3d(1, 1, 1)
-                  rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                -moz-transform: translate3d(0, 2vw, 0) scale3d(1, 1, 1)
-                  rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                -ms-transform: translate3d(0, 2vw, 0) scale3d(1, 1, 1)
-                  rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                transform: translate3d(0, 2vw, 0) scale3d(1, 1, 1) rotateX(0)
-                  rotateY(0) rotateZ(0) skew(0, 0);
-                filter: blur(10px);
-                opacity: 0;
-              "
               class="title-span"
               >FESTIVAL</span
             >
@@ -264,35 +227,11 @@
           <div class="short-info header w-row">
             <div class="column w-col w-col-6">
               <div
-                data-w-id="e70cfa9b-b404-ccd8-fa20-0a46bc951e65"
-                style="
-                  -webkit-transform: translate3d(-5vw, 0, 0) scale3d(1, 1, 1)
-                    rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                  -moz-transform: translate3d(-5vw, 0, 0) scale3d(1, 1, 1)
-                    rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                  -ms-transform: translate3d(-5vw, 0, 0) scale3d(1, 1, 1)
-                    rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                  transform: translate3d(-5vw, 0, 0) scale3d(1, 1, 1) rotateX(0)
-                    rotateY(0) rotateZ(0) skew(0, 0);
-                  opacity: 0;
-                "
                 class="paragraph-emphasis"
               >
                 FESTIVAL OF CREATIVES
               </div>
               <div
-                data-w-id="737666ca-0601-d842-dc03-333adb9a4c83"
-                style="
-                  -webkit-transform: translate3d(-5vw, 0, 0) scale3d(1, 1, 1)
-                    rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                  -moz-transform: translate3d(-5vw, 0, 0) scale3d(1, 1, 1)
-                    rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                  -ms-transform: translate3d(-5vw, 0, 0) scale3d(1, 1, 1)
-                    rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                  transform: translate3d(-5vw, 0, 0) scale3d(1, 1, 1) rotateX(0)
-                    rotateY(0) rotateZ(0) skew(0, 0);
-                  opacity: 0;
-                "
                 class="subtitle"
               >
                 NOVEMBER 8
@@ -300,35 +239,11 @@
             </div>
             <div class="column-2 w-col w-col-6">
               <div
-                data-w-id="9db22452-55a2-c082-7d26-9994ce5409a2"
-                style="
-                  -webkit-transform: translate3d(5vw, 0, 0) scale3d(1, 1, 1)
-                    rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                  -moz-transform: translate3d(5vw, 0, 0) scale3d(1, 1, 1)
-                    rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                  -ms-transform: translate3d(5vw, 0, 0) scale3d(1, 1, 1)
-                    rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                  transform: translate3d(5vw, 0, 0) scale3d(1, 1, 1) rotateX(0)
-                    rotateY(0) rotateZ(0) skew(0, 0);
-                  opacity: 0;
-                "
                 class="paragraph-emphasis"
               >
                 IN ART, DESIGN AND MUSIC
               </div>
               <div
-                data-w-id="377cefaa-80ce-2ff5-2eed-8fec0cf1b23a"
-                style="
-                  -webkit-transform: translate3d(5vw, 0, 0) scale3d(1, 1, 1)
-                    rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                  -moz-transform: translate3d(5vw, 0, 0) scale3d(1, 1, 1)
-                    rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                  -ms-transform: translate3d(5vw, 0, 0) scale3d(1, 1, 1)
-                    rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
-                  transform: translate3d(5vw, 0, 0) scale3d(1, 1, 1) rotateX(0)
-                    rotateY(0) rotateZ(0) skew(0, 0);
-                  opacity: 0;
-                "
                 class="subtitle"
               >
                 @ GINETTA ZURICH
@@ -339,12 +254,9 @@
         <div class="base-div timer">
           <div
             id="js-clock"
-            data-w-id="b898a066-ab96-fa7d-61ec-1ea28d3f3fb0"
-            style="opacity: 0"
             class="w-layout-grid grid"
           >
             <div
-              id="w-node-_50c60eb9-c00c-59fb-1792-60a11602bdaa-056569e2"
               class="counter-div"
             >
               <div id="js-clock-days" class="counter-number">00</div>
@@ -352,7 +264,6 @@
             </div>
             <div class="counter-divider">:</div>
             <div
-              id="w-node-_3d516084-f7a5-afd0-f959-e51480b8f80e-056569e2"
               class="counter-div"
             >
               <div id="js-clock-hours" class="counter-number">00</div>
@@ -360,7 +271,6 @@
             </div>
             <div class="counter-divider">:</div>
             <div
-              id="w-node-_29f11754-23a9-c5d4-e2f7-334918b2512f-056569e2"
               class="counter-div"
             >
               <div id="js-clock-minutes" class="counter-number">00</div>
@@ -368,7 +278,6 @@
             </div>
             <div class="counter-divider">:</div>
             <div
-              id="w-node-_20da5dc4-dd97-17f9-9e06-cd2808889960-056569e2"
               class="counter-div"
             >
               <div id="js-clock-seconds" class="counter-number">00</div>
@@ -378,8 +287,6 @@
         </div>
         <div class="base-div medium">
           <div
-            data-w-id="38a60219-2ea3-6b2d-aacf-61ca659bb7e6"
-            style="opacity: 0"
             class="lead-text"
           >
             We explore the intersection of art, design and music to inspire and
@@ -388,8 +295,6 @@
         </div>
         <div class="video-wrap header">
           <div
-            data-w-id="eb93f4af-96a7-b250-8bff-d8fd5303a194"
-            style="opacity: 0"
             class="video-embed w-embed"
           >
             <video
