@@ -57,7 +57,6 @@
       #js-clock {
         animation-name: fadeIn;
         animation-duration: 1s;
-        animation-delay: 1s;
         animation-fill-mode: forwards;
         opacity: 0;
       }
@@ -600,46 +599,53 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/webflow.js"></script>
     <script>
-      (function () {
-        var deadline = '2024/11/08 17:00';
-        function pad(num, size) {
-          var s = '0' + num;
-          return s.substr(s.length - size);
-        }
-        // fixes "Date.parse(date)" on safari
-        function parseDate(date) {
-          const parsed = Date.parse(date);
-          if (!isNaN(parsed)) return parsed;
-          return Date.parse(date.replace(/-/g, '/').replace(/[a-z]+/gi, ' '));
-        }
-        function getTimeRemaining(endtime) {
-          let total = parseDate(endtime) - Date.parse(new Date());
-          let seconds = Math.floor((total / 1000) % 60);
-          let minutes = Math.floor((total / 1000 / 60) % 60);
-          let hours = Math.floor((total / (1000 * 60 * 60)) % 24);
-          let days = Math.floor(total / (1000 * 60 * 60 * 24));
-          return { total, days, hours, minutes, seconds };
-        }
-        function clock(id, endtime) {
+      var deadline = '2024/11/08 17:00';
+      function pad(num, size) {
+        var s = '0' + num;
+        return s.substr(s.length - size);
+      }
+      // fixes "Date.parse(date)" on safari
+      function parseDate(date) {
+        const parsed = Date.parse(date);
+        if (!isNaN(parsed)) return parsed;
+        return Date.parse(date.replace(/-/g, '/').replace(/[a-z]+/gi, ' '));
+      }
+      function getTimeRemaining(endtime) {
+        let total = parseDate(endtime) - Date.parse(new Date());
+        let seconds = Math.floor((total / 1000) % 60);
+        let minutes = Math.floor((total / 1000 / 60) % 60);
+        let hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+        let days = Math.floor(total / (1000 * 60 * 60 * 24));
+        return { total, days, hours, minutes, seconds };
+      }
+      function clock(id, endtime) {
+        const updateDom = (time) => {
           let days = document.getElementById(id + '-days');
           let hours = document.getElementById(id + '-hours');
           let minutes = document.getElementById(id + '-minutes');
           let seconds = document.getElementById(id + '-seconds');
-          var timeinterval = setInterval(function () {
-            var time = getTimeRemaining(endtime);
-            if (time.total <= 0) {
-              clearInterval(timeinterval);
-            } else {
-              days.innerHTML =
-                time.days > 99 ? pad(time.days, 3) : pad(time.days, 2);
-              hours.innerHTML = pad(time.hours, 2);
-              minutes.innerHTML = pad(time.minutes, 2);
-              seconds.innerHTML = pad(time.seconds, 2);
-            }
-          }, 1000);
-        }
-        clock('js-clock', deadline);
-      })();
+
+          days.innerHTML =
+            time.days > 99 ? pad(time.days, 3) : pad(time.days, 2);
+          hours.innerHTML = pad(time.hours, 2);
+          minutes.innerHTML = pad(time.minutes, 2);
+          seconds.innerHTML = pad(time.seconds, 2);
+        };
+
+        var timeinterval = setInterval(() => {
+          var time = getTimeRemaining(endtime);
+
+          if (time.total <= 0) {
+            clearInterval(timeinterval);
+          } else {
+            updateDom(time);
+          }
+        }, 1000);
+
+        // run on load (not just after interval)
+        updateDom(getTimeRemaining(endtime));
+      }
+      clock('js-clock', deadline);
     </script>
   </body>
 </html>
