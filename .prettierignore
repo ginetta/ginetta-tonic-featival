@@ -1,4 +1,15 @@
 node_modules/
 .wrangler/
-src/js/webflow.js
-src/js/jquery.min.js
+**/.yarn*
+
+src/images/
+src/videos/
+
+# Webflow
+*webflow.js
+*webflow.css
+
+# Individual files
+normalize.css
+Ginetta_Loading_Anim.json
+jquery.min.js
