@@ -99,7 +99,7 @@ body {
 }
 
 .column {
-  grid-column-gap: 0px;
+  grid-column-gap: 0;
   grid-row-gap: 2px;
   flex-direction: column;
   align-items: flex-start;
@@ -510,10 +510,10 @@ body {
   margin-right: auto;
   padding-bottom: 0;
   position: relative;
-  top: 0%;
-  bottom: 0%;
-  left: 0%;
-  right: 0%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .transition {
@@ -574,16 +574,12 @@ body {
   }
 }
 
-.base-div-full.agenda {
-  margin-left: 48px;
-  margin-right: 48px;
-}
-
 .base-div-full.topics {
   margin-left: 0;
   margin-right: 0;
 }
 
+.base-div-full.agenda,
 .base-div-full.creatives {
   margin-left: 48px;
   margin-right: 48px;
@@ -633,10 +629,10 @@ body {
   align-items: center;
   display: flex;
   position: fixed;
-  top: 0%;
-  bottom: 0%;
-  left: 0%;
-  right: 0%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .cursor-wrapper {
@@ -655,8 +651,11 @@ body {
   right: -50%;
 }
 
-.cursor-circle-1 {
-  background-color: #fff;
+.cursor-circle-1,
+.cursor-circle-2,
+.cursor-circle-3,
+.cursor-circle-4 {
+  background: #fff;
   border-radius: 50%;
   justify-content: center;
   align-items: center;
@@ -671,50 +670,15 @@ body {
 }
 
 .cursor-circle-2 {
-  background-color: #ff0069;
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-  width: 10px;
-  height: 10px;
-  display: block;
-  position: absolute;
-  top: 50%;
-  bottom: auto;
-  left: 50%;
-  right: auto;
+  background: #ff0069;
 }
 
 .cursor-circle-3 {
-  mix-blend-mode: normal;
-  background-color: #00fab8;
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-  width: 10px;
-  height: 10px;
-  display: block;
-  position: absolute;
-  top: 50%;
-  bottom: auto;
-  left: 50%;
-  right: auto;
+  background: #00fab8;
 }
 
 .cursor-circle-4 {
-  mix-blend-mode: normal;
-  background-color: #700dfc;
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-  width: 10px;
-  height: 10px;
-  display: block;
-  position: absolute;
-  top: 50%;
-  bottom: auto;
-  left: 50%;
-  right: auto;
+  background: #700dfc;
 }
 
 .grid-2 {
@@ -733,7 +697,7 @@ body {
 }
 
 .columns-2 {
-  grid-column-gap: 0px;
+  grid-column-gap: 0;
   justify-content: space-around;
   margin-left: 0;
   margin-right: 0;
@@ -809,7 +773,7 @@ body {
   grid-column-gap: 24px;
   flex-direction: row;
 
-  & > p {
+  &>p {
     margin-bottom: 0;
   }
 }
@@ -819,17 +783,17 @@ body {
   flex-direction: row;
   align-items: center;
 
-  & > p {
+  &>p {
     margin-bottom: 0;
   }
 
-  & > .nav-link {
+  &>.nav-link {
     padding: 0;
   }
 }
 
 .footer-right-column {
-  grid-row-gap: 0px;
+  grid-row-gap: 0;
   flex-direction: column;
   align-items: flex-end;
   margin-top: 40px;
@@ -866,8 +830,8 @@ body {
 }
 
 .collection-item {
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
   flex-flow: column;
   grid-template-rows: auto auto;
   grid-template-columns: 1fr 1fr;
@@ -886,7 +850,7 @@ body {
 }
 
 .dark-overlay {
-  background-color: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.2);
   width: 100%;
   height: 100%;
   margin-left: auto;
@@ -899,10 +863,10 @@ body {
   z-index: 0;
   max-width: 100%;
   position: absolute;
-  top: 0%;
-  bottom: 0%;
-  left: 0%;
-  right: 0%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .lottie-animation {
@@ -913,8 +877,8 @@ body {
 }
 
 .accordion-toggle {
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-column-gap: 0;
+  grid-row-gap: 0;
   border-bottom: 1px solid #fff;
   width: 90%;
   height: 100%;
@@ -1441,7 +1405,7 @@ body {
   }
 
   .grid-agenda {
-    grid-row-gap: 0px;
+    grid-row-gap: 0;
     grid-template-columns: minmax(220px, 334px);
     position: relative;
   }
@@ -1458,8 +1422,8 @@ body {
   }
 
   .nav-grid {
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
     grid-template-rows: 100px;
     grid-template-columns: 1fr 1fr;
     grid-auto-flow: row;
@@ -1565,11 +1529,6 @@ body {
 
   .collection-item {
     height: auto;
-  }
-
-  .dark-overlay {
-    z-index: 2;
-    background-color: rgba(0, 0, 0, 0.2);
   }
 
   .list-item-5 {

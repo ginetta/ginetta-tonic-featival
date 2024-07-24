@@ -8,16 +8,17 @@
   "scripts": {
     "dev": "wrangler pages dev",
     "prepare": "husky",
-    "pre-push": "yarn test:formatting",
-    "test:formatting": "prettier --check './**/*.{ts,tsx,js}'",
-    "test:formatting:fix": "prettier --write './**/*.{ts,tsx,js}'"
+    "pre-push": "yarn test",
+    "test": "yarn test:formatting",
+    "test:formatting": "prettier --check --ignore-unknown './**/*'",
+    "test:formatting:fix": "prettier --write --ignore-unknown './**/*'"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
-    "husky": "^9.0.11",
-    "prettier": "^3.3.2",
-    "wrangler": "3.62.0"
+    "husky": "^9.1.1",
+    "prettier": "^3.3.3",
+    "wrangler": "3.66.0"
   },
   "keywords": [
     "ginetta",
