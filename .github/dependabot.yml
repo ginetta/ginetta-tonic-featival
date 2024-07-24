@@ -1,28 +1,28 @@
 version: 2
 
 updates:
-  - package-ecosystem: "github-actions"
-    directory: "/"
+  - package-ecosystem: 'github-actions'
+    directory: '/'
     schedule:
-      interval: "monthly"
+      interval: 'monthly'
     labels:
-      - "📦 dependencies"
-  - package-ecosystem: "npm"
-    directory: "/"
+      - '📦 dependencies'
+  - package-ecosystem: 'npm'
+    directory: '/'
     schedule:
-      interval: "monthly"
+      interval: 'monthly'
     labels:
-      - "📦 dependencies"
+      - '📦 dependencies'
 
-  - package-ecosystem: "github-actions"
-    directory: "/infrastructure/"
+  - package-ecosystem: 'github-actions'
+    directory: '/infrastructure/'
     schedule:
-      interval: "monthly"
+      interval: 'monthly'
     labels:
-      - "📦 dependencies"
-  - package-ecosystem: "npm"
-    directory: "/infrastructure/"
+      - '📦 dependencies'
+  - package-ecosystem: 'npm'
+    directory: '/infrastructure/'
     schedule:
-      interval: "monthly"
+      interval: 'monthly'
     labels:
-      - "📦 dependencies"
+      - '📦 dependencies'
