@@ -4,6 +4,7 @@
   "description": "Website for the Ginetta TONIC Festival",
   "version": "1.0.0",
   "author": "@mountainash",
+  "contributors": ["@nlfonseca"],
   "private": true,
   "scripts": {
     "dev": "wrangler pages dev",
