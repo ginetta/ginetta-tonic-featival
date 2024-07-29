@@ -2,9 +2,14 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "cSpell.words": [
+    "commitlint",
+    "corepack",
     "endtime",
     "Ginetta",
     "nextjs",
+    "nlfonseca",
+    "Opengraph",
+    "preprod",
     "Pulumi",
     "Rieterstrasse",
     "timeinterval",
@@ -14,5 +19,8 @@
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "prettier.prettierPath": "./node_modules/prettier",
-  "prettier.requireConfig": true
+  "prettier.requireConfig": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
