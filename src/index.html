@@ -40,6 +40,7 @@
       .video-wrap.header {
         top: -10%;
       }
+
       /* the JS timeout for the clock takes a while to load, and we don't want to show 0:00:00 */
       #js-clock {
         animation-name: fadeIn;
@@ -49,7 +50,7 @@
       }
 
       body {
-        cursor: auto;
+        cursor: auto !important;
         background-blend-mode: hard-light;
         overflow-x: hidden; /* prevent horizontal scroll when cursor boxes are added on the edge */
       }
