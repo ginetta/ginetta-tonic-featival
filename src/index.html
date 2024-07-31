@@ -52,16 +52,17 @@
       body {
         cursor: auto !important;
         background-blend-mode: hard-light;
-        overflow-x: hidden; /* prevent horizontal scroll when cursor boxes are added on the edge */
+        overflow-x: hidden; /* prevent horizontal scroll when cursors are added on the edge */
       }
 
-      .box {
+      .cursor {
         width: var(--d);
         height: var(--d);
         position: absolute;
         z-index: 1000;
         opacity: 0;
-        border: 2px solid #fff;
+        border: 1px solid #fff;
+        border-radius: 50%;
         animation: fadeOut 15s;
         mix-blend-mode: exclusion;
       }
@@ -596,11 +597,9 @@
         trailEl.style.left = `${x}px`;
 
         const d = `${Math.floor(Math.random() * 30) + 10}px`;
-        const r = `${Math.floor(Math.random() * 360)}deg`;
         trailEl.style.setProperty('--d', d);
         const color = colors[Math.floor(Math.random() * colors.length)];
-        trailEl.classList.add('box');
-        trailEl.style.transform = `rotate(${r})`;
+        trailEl.classList.add('cursor');
         trailEl.style.borderColor = color;
 
         document.body.appendChild(trailEl);
@@ -638,14 +637,14 @@
         }
       });
 
-      // remove excess boxes (can't just fill up the DOM forever)
+      // remove excess cursors (can't just fill up the DOM forever)
       setInterval(() => {
-        const boxes = document.querySelectorAll('.box');
-        boxes.forEach((box, index) => {
-          // boxes is added to in order of creation, so we can remove the first ones
-          if (boxes.length > 50) {
+        const cursorTrails = document.querySelectorAll('.cursor');
+        cursorTrails.forEach((item, index) => {
+          // cursorTrails is added to in order of creation, so we can remove the first ones
+          if (item.length > 50) {
             if (index < 10) {
-              box.remove();
+              item.remove();
             }
           }
         });
