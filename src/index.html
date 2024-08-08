@@ -1,6 +1,6 @@
 <!doctype html>
-<!--  This site was created in Webflow. https://www.webflow.com byt is now hand coded -->
-<html data-wf-page="62a04591ecd1bd12056569e2" data-wf-site="62a04591ecd1bdab766569e1" lang="en">
+<!--  This site was originally created in Webflow but is now hand coded -->
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <title>Ginetta Tonic Festival</title>
@@ -23,26 +23,50 @@
     <meta property="og:type" content="website" />
     <meta content="summary_large_image" name="twitter:card" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <link href="css/normalize.css" rel="stylesheet" type="text/css" />
-    <link href="css/webflow.css" rel="stylesheet" type="text/css" />
-    <link href="css/ginetta-tonic-festival.webflow.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
     <style>
+      html {
+        scroll-behavior: smooth; /* nice for the navigation links */
+      }
+
+      @media screen and (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
       .video-wrap.header {
         top: -10%;
       }
-      .custom-cursor {
-        pointer-events: none;
-      }
-      /* the JS timout for the clock takes a while to load, and we don't want to show 0:00:00 */
+
+      /* the JS timeout for the clock takes a while to load, and we don't want to show 0:00:00 */
       #js-clock {
         animation-name: fadeIn;
         animation-duration: 1s;
         animation-fill-mode: forwards;
         opacity: 0;
       }
+
+      body {
+        cursor: auto !important;
+        background-blend-mode: hard-light;
+        overflow-x: hidden; /* prevent horizontal scroll when cursors are added on the edge */
+      }
+
+      .cursor {
+        width: var(--d);
+        height: var(--d);
+        position: absolute;
+        z-index: 1000;
+        opacity: 0;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        animation: fadeOut 15s;
+        mix-blend-mode: exclusion;
+      }
+
       @keyframes fadeIn {
         0% {
           opacity: 0;
@@ -51,7 +75,124 @@
           opacity: 1;
         }
       }
+      @keyframes fadeOut {
+        10% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      /* From Webflow */
+      * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+      }
+      nav li {
+        list-style: none;
+      }
+      h1 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+      p {
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+      img {
+        max-width: 100%;
+        vertical-align: middle;
+        display: inline-block;
+      }
+      .w-container {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 940px;
+      }
+      .w-container:before,
+      .w-container:after {
+        content: ' ';
+        display: table;
+        grid-column-start: 1;
+        grid-row-start: 1;
+        grid-column-end: 2;
+        grid-row-end: 2;
+      }
+      .w-container:after {
+        clear: both;
+      }
+      .w-container .w-row {
+        margin-left: -10px;
+        margin-right: -10px;
+      }
+      .w-row:before,
+      .w-row:after {
+        content: ' ';
+        display: table;
+        grid-column-start: 1;
+        grid-row-start: 1;
+        grid-column-end: 2;
+        grid-row-end: 2;
+      }
+      .w-row:after {
+        clear: both;
+      }
+      .w-row .w-row {
+        margin-left: 0;
+        margin-right: 0;
+      }
+      .w-col {
+        position: relative;
+        float: left;
+        width: 100%;
+        min-height: 1px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      .w-col .w-col {
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .w-col-6 {
+        width: 50%;
+      }
+      .w-button {
+        display: inline-block;
+        text-decoration: none;
+      }
+      @media screen and (max-width: 991px) {
+        .w-container {
+          max-width: 728px;
+        }
+      }
+      @media screen and (max-width: 767px) {
+        .w-row,
+        .w-container .w-row {
+          margin-left: 0;
+          margin-right: 0;
+        }
+        .w-col {
+          width: 100%;
+          left: auto;
+          right: auto;
+        }
+      }
+      @media screen and (max-width: 479px) {
+        .w-container {
+          max-width: none;
+        }
+        .w-col {
+          width: 100%;
+        }
+      }
     </style>
+    <link href="css/ginetta-tonic-festival.webflow.css" rel="stylesheet" type="text/css" />
     <script>
       WebFont.load({
         google: {
@@ -60,14 +201,6 @@
           ],
         },
       });
-
-      !(function (o, c) {
-        var n = c.documentElement,
-          t = ' w-mod-';
-        (n.className += t + 'js'),
-          ('ontouchstart' in o || (o.DocumentTouch && c instanceof DocumentTouch)) &&
-            (n.className += t + 'touch');
-      })(window, document);
     </script>
     <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon" />
     <link href="images/webclip.png" rel="apple-touch-icon" />
@@ -76,70 +209,6 @@
 
   <body class="body">
     <div class="wrapper">
-      <div pointer-events="none" class="custom-cursor">
-        <div class="cursor-wrapper">
-          <div data-w-id="46ac7c77-8b99-99b5-f871-612fcd29dc0a" class="cursor-circle-4"></div>
-          <div data-w-id="42d2d384-5d6b-6cc8-07fb-fddfce91539f" class="cursor-circle-3"></div>
-          <div data-w-id="15a185ff-86f4-f5ff-60f9-b1e1d84dde49" class="cursor-circle-2"></div>
-          <div data-w-id="9df11e8b-9f51-d521-bd1f-2c354048937e" class="cursor-circle-1"></div>
-          <div class="topic-wrapper">
-            <img
-              src="images/Topic_1.gif"
-              loading="lazy"
-              style="display: none"
-              alt="3D Motion Art"
-              class="topic nr1"
-            /><img
-              src="images/Topic_2.gif"
-              loading="lazy"
-              style="display: none"
-              alt="Sound Design"
-              class="topic nr2"
-            /><img
-              src="images/Topic_3.gif"
-              loading="lazy"
-              style="display: none"
-              alt="Live Performance"
-              class="topic nr3"
-            /><img
-              src="images/Topic_4.gif"
-              loading="lazy"
-              style="display: none"
-              alt="Procedural Art"
-              class="topic nr4"
-            /><img
-              src="images/Topic_5.jpg"
-              loading="lazy"
-              style="display: none"
-              sizes="100vw"
-              alt="Procedural Art"
-              srcset="images/Topic_5-p-500.jpeg 500w, images/Topic_5.jpg 640w"
-              class="topic nr5"
-            /><img
-              src="images/Topic_6.jpg"
-              loading="lazy"
-              style="display: none"
-              sizes="100vw"
-              alt="Jessica drinking cocktails"
-              srcset="images/Topic_6-p-500.jpeg 500w, images/Topic_6.jpg 789w"
-              class="topic nr6"
-            /><img
-              src="images/Topic_7.jpg"
-              loading="lazy"
-              sizes="100vw"
-              srcset="images/Topic_7-p-500.jpeg 500w, images/Topic_7.jpg 640w"
-              alt="Procedural Art Generative Design"
-              class="topic nr7"
-            /><img
-              src="images/Topic_8.gif"
-              loading="lazy"
-              style="display: none"
-              alt="3D Realtime sculpture"
-              class="topic nr8"
-            />
-          </div>
-        </div>
-      </div>
       <header id="nav" class="sticky-nav">
         <nav class="container w-container">
           <ul role="list" class="nav-grid w-list-unstyled">
@@ -516,9 +585,72 @@
         </div>
       </div>
     </div>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/webflow.js"></script>
     <script>
+      /* CURSOR ANIMATION */
+      // inspired by: https://codepen.io/aryancodeworm/pen/OJqLJrd
+      const prevCoord = { x: 0, y: 0 };
+      const colors = ['#ff0069', '#700dfc', '#00fab8', '#4dd4e0', '#ffb5b0', '#000089']; // Ginetta brand colors
+
+      const createTrail = (x, y) => {
+        const trailEl = document.createElement('div');
+        trailEl.style.top = `${y}px`;
+        trailEl.style.left = `${x}px`;
+
+        const d = `${Math.floor(Math.random() * 30) + 10}px`;
+        trailEl.style.setProperty('--d', d);
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        trailEl.classList.add('cursor');
+        trailEl.style.borderColor = color;
+
+        document.body.appendChild(trailEl);
+      };
+
+      // inspired by: https://stackoverflow.com/a/3011694/488287
+      const whereAt = (() => {
+        if (window.pageXOffset != undefined) {
+          return (e) => {
+            return [e.clientX + window.pageXOffset, e.clientY + window.pageYOffset];
+          };
+        } else
+          return () => {
+            let ev = window.event;
+            let d = document.documentElement;
+            let b = document.body;
+            return [
+              ev.clientX + d.scrollLeft + b.scrollLeft,
+              ev.clientY + d.scrollTop + b.scrollTop,
+            ];
+          };
+      })();
+
+      document.addEventListener('mousemove', (e) => {
+        const documentPos = whereAt(e);
+        const pos = {
+          x: documentPos[0],
+          y: documentPos[1],
+        };
+
+        if (Math.abs(pos.x - prevCoord.x) > 20 && Math.abs(pos.y - prevCoord.y) > 20) {
+          prevCoord.x = pos.x;
+          prevCoord.y = pos.y;
+          createTrail(pos.x, pos.y);
+        }
+      });
+
+      // remove excess cursors (can't just fill up the DOM forever)
+      setInterval(() => {
+        const cursorTrails = document.querySelectorAll('.cursor');
+        cursorTrails.forEach((item, index) => {
+          // cursorTrails is added to in order of creation, so we can remove the first ones
+          if (item.length > 50) {
+            if (index < 10) {
+              item.remove();
+            }
+          }
+        });
+      }, 2000);
+
+      /* COUNTDOWN TIMER */
       var deadline = '2024/11/08 17:00';
       function pad(num, size) {
         var s = '0' + num;
