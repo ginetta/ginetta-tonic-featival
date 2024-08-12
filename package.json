@@ -21,7 +21,7 @@
     "@commitlint/config-conventional": "^19.2.2",
     "husky": "^9.1.4",
     "prettier": "^3.3.3",
-    "wrangler": "3.69.1"
+    "wrangler": "3.70.0"
   },
   "keywords": [
     "ginetta",
