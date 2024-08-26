@@ -175,6 +175,74 @@
         display: inline-block;
         text-decoration: none;
       }
+
+      /* logo */
+      #logo {
+        --length: 30px;
+
+        display: block;
+        width: var(--length);
+        height: var(--length);
+
+        animation: 5s ease-in-out spinner infinite;
+        transform-origin: center;
+
+        span {
+          position: absolute;
+          display: block;
+          width: var(--length);
+          height: var(--length);
+          background: currentcolor;
+          border: 1px solid #f8bd60;
+          border-radius: 50%;
+          transition: all 1s;
+          mix-blend-mode: screen;
+        }
+        &:hover span {
+          border-color: #FFF;
+          box-shadow: 0 0 7px 5px currentcolor;
+        }
+      }
+
+      #red {
+        color: #f00;
+        animation: 3s ease-in-out red-shifter infinite;
+      }
+      #green {
+        color: #0f0;
+        animation: 3s ease-in-out green-shifter infinite;
+      }
+      #blue {
+        color: #00f;
+        animation: 3s ease-in-out blue-shifter infinite;
+      }
+
+      @keyframes spinner {
+        50% {
+          scale: 1.25;
+          rotate: 180deg;
+        }
+        to {
+          rotate: 360deg;
+        }
+      }
+
+      @keyframes red-shifter {
+        50% {
+          transform: translate(-30%, -30%);
+        }
+      }
+      @keyframes blue-shifter {
+        50% {
+          transform: translate(0, 30%);
+        }
+      }
+      @keyframes green-shifter {
+        50% {
+          transform: translate(30%, -30%);
+        }
+      }
+
       @media screen and (max-width: 991px) {
         .w-container {
           max-width: 728px;
@@ -210,8 +278,8 @@
         },
       });
     </script>
-    <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon" />
-    <link href="images/webclip.png" rel="apple-touch-icon" />
+    <link href="images/tonic-favicon.png" rel="shortcut icon" type="image/x-icon" />
+    <link href="images/tonic-apple-touch-icon.png" rel="apple-touch-icon" />
   </head>
 
   <body class="body">
@@ -220,14 +288,12 @@
         <nav class="container w-container">
           <ul class="nav-grid w-list-unstyled">
             <li id="w-node-a53329c7-6add-436f-3ce0-a1720251ed24-0251ed21" class="list-item-5">
-              <a href="index.html" aria-current="page" class="nav-logo-link w--current"
-                ><img
-                  src="images/Ginetta_Logo.svg"
-                  width="100"
-                  height="50"
-                  alt="Ginetta Logo"
-                  class="nav-logo"
-              /></a>
+              <a href="/" aria-current="page" class="nav-logo-link w--current"
+                ><span id="logo">
+                  <span id="red"></span>
+                  <span id="green"></span>
+                  <span id="blue"></span></span
+              ></a>
             </li>
             <li class="list-item">
               <a href="#section-agenda" class="nav-link">AGENDA</a>
