@@ -19,9 +19,9 @@
   "devDependencies": {
     "@commitlint/cli": "^19.4.0",
     "@commitlint/config-conventional": "^19.2.2",
-    "husky": "^9.1.4",
+    "husky": "^9.1.5",
     "prettier": "^3.3.3",
-    "wrangler": "3.70.0"
+    "wrangler": "3.72.2"
   },
   "keywords": [
     "ginetta",
@@ -32,5 +32,5 @@
     "type": "git",
     "url": "git@github.com:ginetta/ginetta-tonic-festival.git"
   },
-  "packageManager": "yarn@4.4.0"
+  "packageManager": "yarn@4.4.1"
 }
