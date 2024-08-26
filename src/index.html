@@ -25,6 +25,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
+    <link href="css/ginetta-tonic-festival.webflow.css" rel="stylesheet" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
     <style>
       html {
@@ -51,6 +52,12 @@
 
       body {
         cursor: auto !important;
+        background-image: radial-gradient(
+          circle at 100% 0,
+          rgb(255, 217, 140),
+          rgb(255, 159, 147),
+          rgb(255, 153, 197)
+        );
         background-blend-mode: hard-light;
         overflow-x: hidden; /* prevent horizontal scroll when cursors are added on the edge */
       }
@@ -192,7 +199,6 @@
         }
       }
     </style>
-    <link href="css/ginetta-tonic-festival.webflow.css" rel="stylesheet" type="text/css" />
     <script>
       WebFont.load({
         google: {
@@ -210,7 +216,7 @@
     <div class="wrapper">
       <header id="nav" class="sticky-nav">
         <nav class="container w-container">
-          <ul role="list" class="nav-grid w-list-unstyled">
+          <ul class="nav-grid w-list-unstyled">
             <li id="w-node-a53329c7-6add-436f-3ce0-a1720251ed24-0251ed21" class="list-item-5">
               <a href="index.html" aria-current="page" class="nav-logo-link w--current"
                 ><img
@@ -296,14 +302,6 @@
             for the local community of creators.
           </div>
         </div>
-        <div class="video-wrap header">
-          <div class="video-embed w-embed">
-            <video width="100%" height="100%" autoplay loop muted playsinline>
-              <source src="videos/GinettaTonic_Loop_4.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
       </div>
 
       <div class="base-div-full">
@@ -318,6 +316,7 @@
           </div>
         </div>
       </div>
+
       <div class="base-section">
         <div id="section-agenda" class="base-div-full">
           <div class="base-container w-container">
@@ -513,15 +512,6 @@
               class="button-primary w-button"
               >Get your Tonic ticket</a
             >
-          </div>
-        </div>
-        <div class="video-wrap cta">
-          <div class="dark-overlay"></div>
-          <div class="video-embed w-embed">
-            <video width="100%" height="100%" autoplay loop muted playsinline>
-              <source src="videos/GinettaTonic_Loop_7.mp4" type="video/mp4" />
-              Your browser does not support the video tag
-            </video>
           </div>
         </div>
       </div>
