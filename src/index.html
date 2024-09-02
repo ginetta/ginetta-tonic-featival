@@ -62,6 +62,15 @@
         );
         background-blend-mode: hard-light;
         overflow-x: hidden; /* prevent horizontal scroll when cursors are added on the edge */
+
+        &:before {
+          position: absolute;
+          content: '';
+          height: 100%;
+          width: 100%;
+          background: url(/images/bg-noise-light.png);
+          opacity: .6;
+        }
       }
 
       .cursor {
