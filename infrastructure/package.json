@@ -8,11 +8,11 @@
     "setenv": "set -o allexport; source .env && set +o allexport"
   },
   "devDependencies": {
-    "@types/node": "22.5.2"
+    "@types/node": "22.5.4"
   },
   "dependencies": {
     "@pulumi/cloudflare": "5.37.1",
-    "@pulumi/pulumi": "3.130.0"
+    "@pulumi/pulumi": "3.131.0"
   },
   "packageManager": "yarn@4.4.1"
 }
