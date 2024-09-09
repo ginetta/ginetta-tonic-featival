@@ -69,7 +69,7 @@
           height: 100%;
           width: 100%;
           background: url(/images/bg-noise-light.png);
-          opacity: .6;
+          opacity: 0.6;
         }
       }
 
@@ -99,6 +99,43 @@
         }
         100% {
           opacity: 0;
+        }
+      }
+
+      /* Image hover effect */
+      .image {
+        position: relative;
+
+        img {
+          background: #000;
+          cursor: pointer;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            225deg,
+            #000000 0%,
+            #000000 25%,
+            #1e539e 50%,
+            #ff3083 75%,
+            #7800a8 100%
+          );
+          background-repeat: no-repeat;
+          background-size: 400% 400%;
+          background-position: 0;
+          opacity: 0.75;
+          mix-blend-mode: color;
+          transition: 0.75s all;
+        }
+
+        &:hover::before {
+          background-position: 0 -100%;
         }
       }
 
@@ -525,55 +562,66 @@
             <h1 class="heading-1">JOIN US AT OUR WORKSPACE</h1>
             <div class="subtitle">HOSTED AT OUR WORKSPACE IN ZURICH</div>
             <div class="base-div">
-              <img
-                src="images/Ginetta_Tonic_Image_1.jpg"
-                loading="lazy"
-                sizes="100vw"
-                srcset="
-                  images/Ginetta_Tonic_Image_1-p-500.jpg   500w,
-                  images/Ginetta_Tonic_Image_1-p-800.jpg   800w,
-                  images/Ginetta_Tonic_Image_1-p-1080.jpg 1080w,
-                  images/Ginetta_Tonic_Image_1.jpg        1600w
-                "
-                alt="2 musicians playing music in front of a LED wall"
-                class="base-image"
-              /><img
-                src="images/Ginetta_Tonic_Image_2.jpeg"
-                loading="lazy"
-                sizes="100vw"
-                srcset="
-                  images/Ginetta_Tonic_Image_2-p-500.jpeg   500w,
-                  images/Ginetta_Tonic_Image_2-p-800.jpeg   800w,
-                  images/Ginetta_Tonic_Image_2-p-1080.jpeg 1080w,
-                  images/Ginetta_Tonic_Image_2.jpeg        1600w
-                "
-                alt="Talk to overcome fear"
-                class="base-image"
-              /><img
-                src="images/Ginetta_Tonic_Image_3.jpeg"
-                loading="lazy"
-                sizes="100vw"
-                srcset="
-                  images/Ginetta_Tonic_Image_3-p-500.jpeg   500w,
-                  images/Ginetta_Tonic_Image_3-p-800.jpeg   800w,
-                  images/Ginetta_Tonic_Image_3-p-1080.jpeg 1080w,
-                  images/Ginetta_Tonic_Image_3.jpeg        1600w
-                "
-                alt="An art workshop with creatives"
-                class="base-image"
-              /><img
-                src="images/Ginetta_Tonic_Image_4.jpeg"
-                loading="lazy"
-                sizes="100vw"
-                srcset="
-                  images/Ginetta_Tonic_Image_4-p-500.jpeg   500w,
-                  images/Ginetta_Tonic_Image_4-p-800.jpeg   800w,
-                  images/Ginetta_Tonic_Image_4-p-1080.jpeg 1080w,
-                  images/Ginetta_Tonic_Image_4.jpeg        1600w
-                "
-                alt="Art Installation with Fog and projections"
-                class="base-image"
-              />
+              <div class="image">
+                <img
+                  src="images/Ginetta_Tonic_Image_1.jpg"
+                  loading="lazy"
+                  sizes="100vw"
+                  srcset="
+                    images/Ginetta_Tonic_Image_1-p-500.jpg   500w,
+                    images/Ginetta_Tonic_Image_1-p-800.jpg   800w,
+                    images/Ginetta_Tonic_Image_1-p-1080.jpg 1080w,
+                    images/Ginetta_Tonic_Image_1.jpg        1600w
+                  "
+                  alt="2 musicians playing music in front of a LED wall"
+                  class="base-image"
+                />
+              </div>
+              <div class="image">
+                <img
+                  src="images/Ginetta_Tonic_Image_2.jpeg"
+                  loading="lazy"
+                  sizes="100vw"
+                  srcset="
+                    images/Ginetta_Tonic_Image_2-p-500.jpeg   500w,
+                    images/Ginetta_Tonic_Image_2-p-800.jpeg   800w,
+                    images/Ginetta_Tonic_Image_2-p-1080.jpeg 1080w,
+                    images/Ginetta_Tonic_Image_2.jpeg        1600w
+                  "
+                  alt="Talk to overcome fear"
+                  class="base-image"
+                />
+              </div>
+              <div class="image">
+                <img
+                  src="images/Ginetta_Tonic_Image_3.jpeg"
+                  loading="lazy"
+                  sizes="100vw"
+                  srcset="
+                    images/Ginetta_Tonic_Image_3-p-500.jpeg   500w,
+                    images/Ginetta_Tonic_Image_3-p-800.jpeg   800w,
+                    images/Ginetta_Tonic_Image_3-p-1080.jpeg 1080w,
+                    images/Ginetta_Tonic_Image_3.jpeg        1600w
+                  "
+                  alt="An art workshop with creatives"
+                  class="base-image"
+                />
+              </div>
+              <div class="image">
+                <img
+                  src="images/Ginetta_Tonic_Image_4.jpeg"
+                  loading="lazy"
+                  sizes="100vw"
+                  srcset="
+                    images/Ginetta_Tonic_Image_4-p-500.jpeg   500w,
+                    images/Ginetta_Tonic_Image_4-p-800.jpeg   800w,
+                    images/Ginetta_Tonic_Image_4-p-1080.jpeg 1080w,
+                    images/Ginetta_Tonic_Image_4.jpeg        1600w
+                  "
+                  alt="Art Installation with Fog and projections"
+                  class="base-image"
+                />
+              </div>
             </div>
             <p class="body-text sandwich">Ginetta<br />Rieterstrasse 6<br />8002 Zurich</p>
             <a
