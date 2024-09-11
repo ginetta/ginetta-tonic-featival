@@ -53,16 +53,21 @@
 
       body {
         cursor: auto !important;
-        background-image: radial-gradient(
-          circle at 100% 0,
-          rgb(252, 176, 69),
-          rgb(255, 159, 147),
-          rgb(253, 29, 29),
-          rgb(131, 58, 180),
-          rgba(0, 0, 0) 98%
-        );
+        background: rgb(148,127,205);
+        background: linear-gradient(195deg,
+        rgba(148,127,205,1) 0%,
+        rgba(148,125,205,1) 7%,
+        rgba(159,154,196,1) 18%,
+        rgba(176,169,191,1) 25%,
+        rgba(163,165,197,1) 29%,
+        rgba(217,156,165,1) 39%,
+        rgba(221,158,106,1) 50%,
+        rgba(220,128,67,1) 55%,
+        rgba(207,75,50,1) 62%,
+        rgba(79,14,20,1) 73%,
+        rgba(39,8,40,1) 79%,
+        rgba(0,0,0,1) 94%);
         background-blend-mode: hard-light;
-        overflow-x: hidden; /* prevent horizontal scroll when cursors are added on the edge */
 
         &:before {
           position: absolute;
@@ -72,18 +77,6 @@
           background: url(/images/bg-noise-light.png);
           opacity: 0.6;
         }
-      }
-
-      .cursor {
-        width: var(--d);
-        height: var(--d);
-        position: absolute;
-        z-index: 1000;
-        opacity: 0;
-        border: 1px solid #fff;
-        border-radius: 50%;
-        animation: fadeOut 15s;
-        mix-blend-mode: exclusion;
       }
 
       @keyframes fadeIn {
@@ -121,11 +114,10 @@
           height: 100%;
           background: linear-gradient(
             225deg,
-            #000000 0%,
-            #000000 25%,
-            #1e539e 50%,
-            #ff3083 75%,
-            #7800a8 100%
+            rgba(217,156,165,1) 0%,
+            rgba(221,158,106,1) 33%,
+            rgba(220,128,67,1) 66%,
+            rgba(207,75,50,1) 100%
           );
           background-repeat: no-repeat;
           background-size: 400% 400%;
@@ -235,13 +227,13 @@
 
       /* logo */
       #logo {
-        --length: 30px;
+        --length: 16px;
 
         display: block;
         width: var(--length);
         height: var(--length);
 
-        animation: 5s ease-in-out spinner infinite;
+        animation: 7.5s ease-in-out spinner infinite;
         transform-origin: center;
 
         span {
@@ -250,7 +242,6 @@
           width: var(--length);
           height: var(--length);
           background: currentcolor;
-          border: 1px solid #f8bd60;
           border-radius: 50%;
           transition: all 1s;
           mix-blend-mode: screen;
@@ -263,15 +254,15 @@
 
       #red {
         color: #f00;
-        animation: 3s ease-in-out red-shifter infinite;
+        animation: 4.5s ease-in-out red-shifter infinite;
       }
       #green {
         color: #0f0;
-        animation: 3s ease-in-out green-shifter infinite;
+        animation: 4.5s ease-in-out green-shifter infinite;
       }
       #blue {
         color: #00f;
-        animation: 3s ease-in-out blue-shifter infinite;
+        animation: 4.5s ease-in-out blue-shifter infinite;
       }
 
       @keyframes spinner {
@@ -707,70 +698,6 @@
       </footer>
     </div>
     <script>
-      /* CURSOR ANIMATION */
-      // inspired by: https://codepen.io/aryancodeworm/pen/OJqLJrd
-      const prevCoord = { x: 0, y: 0 };
-      const colors = ['#ff0069', '#700dfc', '#00fab8', '#4dd4e0', '#ffb5b0', '#000089']; // Ginetta brand colors
-
-      const createTrail = (x, y) => {
-        const trailEl = document.createElement('div');
-        trailEl.style.top = `${y}px`;
-        trailEl.style.left = `${x}px`;
-
-        const d = `${Math.floor(Math.random() * 30) + 10}px`;
-        trailEl.style.setProperty('--d', d);
-        const color = colors[Math.floor(Math.random() * colors.length)];
-        trailEl.classList.add('cursor');
-        trailEl.style.borderColor = color;
-
-        document.body.appendChild(trailEl);
-      };
-
-      // inspired by: https://stackoverflow.com/a/3011694/488287
-      const whereAt = (() => {
-        if (window.pageXOffset != undefined) {
-          return (e) => {
-            return [e.clientX + window.pageXOffset, e.clientY + window.pageYOffset];
-          };
-        } else
-          return () => {
-            let ev = window.event;
-            let d = document.documentElement;
-            let b = document.body;
-            return [
-              ev.clientX + d.scrollLeft + b.scrollLeft,
-              ev.clientY + d.scrollTop + b.scrollTop,
-            ];
-          };
-      })();
-
-      document.addEventListener('mousemove', (e) => {
-        const documentPos = whereAt(e);
-        const pos = {
-          x: documentPos[0],
-          y: documentPos[1],
-        };
-
-        if (Math.abs(pos.x - prevCoord.x) > 20 && Math.abs(pos.y - prevCoord.y) > 20) {
-          prevCoord.x = pos.x;
-          prevCoord.y = pos.y;
-          createTrail(pos.x, pos.y);
-        }
-      });
-
-      // remove excess cursors (can't just fill up the DOM forever)
-      setInterval(() => {
-        const cursorTrails = document.querySelectorAll('.cursor');
-        cursorTrails.forEach((item, index) => {
-          // cursorTrails is added to in order of creation, so we can remove the first ones
-          if (item.length > 50) {
-            if (index < 10) {
-              item.remove();
-            }
-          }
-        });
-      }, 2000);
-
       /* COUNTDOWN TIMER */
       var deadline = '2024/11/08 17:00';
       function pad(num, size) {
