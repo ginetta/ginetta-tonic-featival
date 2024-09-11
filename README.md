@@ -2,6 +2,8 @@
 
 > Website for the Ginetta TONIC Festival
 
+![Live coding](src/images/live-coders.jpg)
+
 ## URLs
 
 - PROD: <https://festival.ginetta.net/>, <https://ginetta-tonic-festival.pages.dev/>
@@ -24,3 +26,4 @@ GitHub Actions are setup as per [Cloudflare Docs - Use GitHub Actions](https://d
 ## Resources
 
 - [Cloudflare Pages](https://pages.cloudflare.com/)
+- [Figma Design](https://www.figma.com/design/OtaiYriDbHIteNmOPRrh4m/GTonic-Festival_2024?node-id=0-1&node-type=canvas&t=C2M4LIcW7aZayJ5U-0)
