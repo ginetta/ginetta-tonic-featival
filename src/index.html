@@ -26,6 +26,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/js/photoswipe/dist/photoswipe.css" />
     <link href="css/ginetta-tonic-festival.webflow.css" rel="stylesheet" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
     <style>
@@ -98,6 +99,7 @@
       /* Image hover effect */
       .image {
         position: relative;
+        display: block;
 
         img {
           background: #000;
@@ -327,10 +329,19 @@
         },
       });
     </script>
+    <script type="module">
+      import PhotoSwipeLightbox from '/js/photoswipe/dist/photoswipe-lightbox.esm.js';
+      const lightbox = new PhotoSwipeLightbox({
+        gallery: '#gallery',
+        children: 'a',
+        counter: false,
+        pswpModule: () => import('/js/photoswipe/dist/photoswipe.esm.js'),
+      });
+      lightbox.init();
+    </script>
     <link href="images/tonic-favicon.png" rel="shortcut icon" type="image/x-icon" />
     <link href="images/tonic-apple-touch-icon.png" rel="apple-touch-icon" />
   </head>
-
   <body class="body">
     <div class="wrapper">
       <header id="nav" class="sticky-nav">
@@ -519,21 +530,17 @@
       <div class="base-section">
         <div id="section-creatives" class="base-div-full">
           <div class="base-container w-container">
-            <h3 class="heading-3">Be a part of Ginetta Tonic?</h3>
-            <div class="column-table-2">
-              <div class="div-block">
-                <p class="body-text">
-                  Call for creatives! If you are passionate about design, music or art - this is
-                  your chance to share a talk, workshop or do a performance.
-                </p>
-                <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSdzZAuK8HHQI28uso5PZWZhLAq9VJocYb2nRPXYIbIPCj_UmQ/viewform?usp=sf_link"
-                  target="_blank"
-                  class="button-primary w-button"
-                  >Submit today</a
-                >
-              </div>
-            </div>
+            <h1 class="heading-1">BE A PART OF GINETTA TONIC</h1>
+            <p class="body-text sandwich">
+              Call for creatives! If you are passionate about design, music or art - this is your
+              chance to share a talk, workshop or do a performance.
+            </p>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdzZAuK8HHQI28uso5PZWZhLAq9VJocYb2nRPXYIbIPCj_UmQ/viewform?usp=sf_link"
+              target="_blank"
+              class="button-primary w-button"
+              >Submit today</a
+            >
           </div>
         </div>
       </div>
@@ -557,9 +564,22 @@
         <div id="section-location" class="base-div-full">
           <div class="base-container w-container">
             <h1 class="heading-1">JOIN US AT OUR WORKSPACE</h1>
-            <div class="subtitle">HOSTED AT OUR WORKSPACE IN ZURICH</div>
-            <div class="base-div">
-              <div class="image">
+            <p class="body-text sandwich">Hosted at our Workspace in Enge, Zurich.</p>
+            <p class="body-text sandwich">Ginetta<br />Rieterstrasse 6<br />8002 Zurich</p>
+            <a
+              href="https://goo.gl/maps/nfqWSYZMYJXg9ZnLA"
+              target="_blank"
+              class="button-secondary w-button"
+              >Get directions</a
+            >
+            <div class="pswp-gallery base-div" id="gallery">
+              <a
+                href="/images/Ginetta_Tonic_Image_1.jpg"
+                data-pswp-width="1600"
+                data-pswp-height="900"
+                class="image"
+                target="_blank"
+              >
                 <img
                   src="images/Ginetta_Tonic_Image_1.jpg"
                   loading="lazy"
@@ -571,10 +591,15 @@
                     images/Ginetta_Tonic_Image_1.jpg        1600w
                   "
                   alt="2 musicians playing music in front of a LED wall"
-                  class="base-image"
                 />
-              </div>
-              <div class="image">
+              </a>
+              <a
+                href="/images/Ginetta_Tonic_Image_2.jpg"
+                data-pswp-width="1600"
+                data-pswp-height="900"
+                class="image"
+                target="_blank"
+              >
                 <img
                   src="images/Ginetta_Tonic_Image_2.jpeg"
                   loading="lazy"
@@ -588,8 +613,14 @@
                   alt="Talk to overcome fear"
                   class="base-image"
                 />
-              </div>
-              <div class="image">
+              </a>
+              <a
+                href="/images/Ginetta_Tonic_Image_3.jpg"
+                data-pswp-width="1600"
+                data-pswp-height="900"
+                class="image"
+                target="_blank"
+              >
                 <img
                   src="images/Ginetta_Tonic_Image_3.jpeg"
                   loading="lazy"
@@ -603,8 +634,14 @@
                   alt="An art workshop with creatives"
                   class="base-image"
                 />
-              </div>
-              <div class="image">
+              </a>
+              <a
+                href="/images/Ginetta_Tonic_Image_4.jpg"
+                data-pswp-width="1600"
+                data-pswp-height="900"
+                class="image"
+                target="_blank"
+              >
                 <img
                   src="images/Ginetta_Tonic_Image_4.jpeg"
                   loading="lazy"
@@ -618,22 +655,269 @@
                   alt="Art Installation with Fog and projections"
                   class="base-image"
                 />
-              </div>
+              </a>
+              <a
+                href="/images/tonic-bagel.jpg"
+                data-pswp-width="1920"
+                data-pswp-height="1080"
+                class="image"
+                target="_blank"
+              >
+                <img
+                  src="/images/tonic-bagel.jpg"
+                  alt="Bagels with dried tomatoes and cream cheese"
+                  sizes="100vw"
+                  loading="lazy"
+                />
+              </a>
+              <a
+                href="/images/tonic-cables.jpg"
+                data-pswp-width="1920"
+                data-pswp-height="1080"
+                class="image"
+                target="_blank"
+              >
+                <img
+                  src="/images/tonic-cables.jpg"
+                  alt="Live music cables"
+                  sizes="100vw"
+                  loading="lazy"
+                />
+              </a>
+              <a
+                href="/images/tonic-comic.jpg"
+                data-pswp-width="1920"
+                data-pswp-height="1080"
+                class="image"
+                target="_blank"
+              >
+                <img
+                  src="/images/tonic-comic.jpg"
+                  alt="Presentation at Tonic Festival"
+                  sizes="100vw"
+                  loading="lazy"
+                />
+              </a>
+              <a
+                href="/images/tonic-explain.jpg"
+                data-pswp-width="1920"
+                data-pswp-height="1080"
+                class="image"
+                target="_blank"
+              >
+                <img
+                  src="/images/tonic-explain.jpg"
+                  alt="Creative explaining at Tonic Festival"
+                  sizes="100vw"
+                  loading="lazy"
+                />
+              </a>
+              <a
+                href="/images/tonic-fog.jpg"
+                data-pswp-width="2163"
+                data-pswp-height="3239"
+                data-cropped="true"
+                class="image"
+                target="_blank"
+              >
+                <img
+                  src="/images/tonic-fog-cropped.jpg"
+                  alt="DJ at Tonic Festival"
+                  sizes="100vw"
+                  loading="lazy"
+                />
+              </a>
+              <a
+                href="/images/tonic-keep.jpg"
+                data-pswp-width="1920"
+                data-pswp-height="1080"
+                class="image"
+                target="_blank"
+              >
+                <img
+                  src="/images/tonic-keep.jpg"
+                  alt="Pottery at Tonic Festival"
+                  sizes="100vw"
+                  loading="lazy"
+                />
+              </a>
+              <a
+                href="/images/tonic-listen.jpg"
+                data-pswp-width="1920"
+                data-pswp-height="1080"
+                class="image"
+                target="_blank"
+              >
+                <img
+                  src="/images/tonic-listen.jpg"
+                  alt="A couple listening to an audio visual installation"
+                  sizes="100vw"
+                  loading="lazy"
+                />
+              </a>
+              <a
+                href="/images/tonic-look.jpg"
+                data-pswp-width="1920"
+                data-pswp-height="1080"
+                class="image"
+                target="_blank"
+              >
+                <img
+                  src="/images/tonic-look.jpg"
+                  alt="TONIC Festival Guest looking at art"
+                  sizes="100vw"
+                  loading="lazy"
+                />
+              </a>
+              <a
+                href="/images/tonic-me.jpg"
+                data-pswp-width="1920"
+                data-pswp-height="1080"
+                class="image"
+                target="_blank"
+              >
+                <img
+                  src="/images/tonic-me.jpg"
+                  alt="A presentation at Tonic Festival"
+                  sizes="100vw"
+                  loading="lazy"
+                />
+              </a>
+              <a
+                href="/images/tonic-mold.jpg"
+                data-pswp-width="1920"
+                data-pswp-height="1080"
+                class="image"
+                target="_blank"
+              >
+                <img
+                  src="/images/tonic-mold.jpg"
+                  alt="Ceramic plates at Tonic Festival"
+                  sizes="100vw"
+                  loading="lazy"
+                />
+              </a>
+              <a
+                href="/images/tonic-program.jpg"
+                data-pswp-width="1920"
+                data-pswp-height="1080"
+                class="image"
+                target="_blank"
+              >
+                <img
+                  src="/images/tonic-program.jpg"
+                  alt="Music making at Tonic Festival"
+                  sizes="100vw"
+                  loading="lazy"
+                />
+              </a>
+              <a
+                href="/images/tonic-seek.jpg"
+                data-pswp-width="1920"
+                data-pswp-height="1080"
+                class="image"
+                target="_blank"
+              >
+                <img
+                  src="/images/tonic-seek.jpg"
+                  alt="Audience mingling at Tonic Festival"
+                  sizes="100vw"
+                  loading="lazy"
+                />
+              </a>
+              <a
+                href="/images/tonic-sharp.jpg"
+                data-pswp-width="2163"
+                data-pswp-height="3239"
+                data-cropped="true"
+                class="image"
+                target="_blank"
+              >
+                <img
+                  src="/images/tonic-sharp-cropped.jpg"
+                  alt="DJ with sharp visuals at Tonic Festival"
+                  sizes="100vw"
+                  loading="lazy"
+                />
+              </a>
+              <a
+                href="/images/tonic-smell.jpg"
+                data-pswp-width="1920"
+                data-pswp-height="1080"
+                class="image"
+                target="_blank"
+              >
+                <img
+                  src="/images/tonic-smell.jpg"
+                  alt="Something for all the senses at Tonic Festival"
+                  sizes="100vw"
+                  loading="lazy"
+                />
+              </a>
+              <a
+                href="/images/tonic-static.jpg"
+                data-pswp-width="1920"
+                data-pswp-height="1080"
+                class="image"
+                target="_blank"
+              >
+                <img
+                  src="/images/tonic-static.jpg"
+                  alt="Music presentation at Tonic Festival"
+                  sizes="100vw"
+                  loading="lazy"
+                />
+              </a>
+              <a
+                href="/images/tonic-studergin.jpg"
+                data-pswp-width="1920"
+                data-pswp-height="1080"
+                class="image"
+                target="_blank"
+              >
+                <img
+                  src="/images/tonic-studergin.jpg"
+                  alt="Studer Gin at Tonic Festival"
+                  sizes="100vw"
+                  loading="lazy"
+                />
+              </a>
+              <a
+                href="/images/tonic-triangle.jpg"
+                data-pswp-width="1920"
+                data-pswp-height="1080"
+                class="image"
+                target="_blank"
+              >
+                <img
+                  src="/images/tonic-triangle.jpg"
+                  alt="How to make an entertaining presentation"
+                  sizes="100vw"
+                  loading="lazy"
+                />
+              </a>
+              <a
+                href="/images/tonic-watch.jpg"
+                data-pswp-width="1920"
+                data-pswp-height="1080"
+                class="image"
+                target="_blank"
+              >
+                <img
+                  src="/images/tonic-watch.jpg"
+                  alt="Crowd dancing to live music at Tonic Festival"
+                  sizes="100vw"
+                  loading="lazy"
+                />
+              </a>
             </div>
-            <p class="body-text sandwich">Ginetta<br />Rieterstrasse 6<br />8002 Zurich</p>
-            <a
-              href="https://goo.gl/maps/nfqWSYZMYJXg9ZnLA"
-              target="_blank"
-              class="button-secondary w-button"
-              >Get directions</a
-            >
           </div>
         </div>
       </div>
       <div class="base-section cta">
         <div class="base-div-full">
           <div class="base-container w-container">
-            <h1 class="heading-1">BE PART OF AN AMAZING EXPERIENCE.</h1>
+            <h1 class="heading-1">BE PART OF AN AMAZING EXPERIENCE</h1>
             <p class="body-text sandwich">
               Join us in our second annual Ginetta Tonic Festival. Bring together the community, be
               inspired, create, and enjoy.
