@@ -627,18 +627,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pulumi/cloudflare@npm:5.39.0":
-  version: 5.39.0
-  resolution: "@pulumi/cloudflare@npm:5.39.0"
+"@pulumi/cloudflare@npm:5.39.1":
+  version: 5.39.1
+  resolution: "@pulumi/cloudflare@npm:5.39.1"
   dependencies:
     "@pulumi/pulumi": "npm:^3.0.0"
-  checksum: 10c0/b9cc726afa4e3583f5e6007ced1d4e3dda641aa19c0ce61f0d2c2aa7e66e25639a84161e6e07370c3c1f185a33abdea0dfcde2cdf10b5208070303897287e1e1
+  checksum: 10c0/3245acfac7d83ef430ac0ce4cce63aaa004399b6824dcf292aa6c84e45c7ce6e931a70ad4783ae9dd46aa1f4fd8dac473f08e3a0e59e29d6baf4406aea724aeb
   languageName: node
   linkType: hard
 
-"@pulumi/pulumi@npm:3.133.0":
-  version: 3.133.0
-  resolution: "@pulumi/pulumi@npm:3.133.0"
+"@pulumi/pulumi@npm:3.134.0":
+  version: 3.134.0
+  resolution: "@pulumi/pulumi@npm:3.134.0"
   dependencies:
     "@grpc/grpc-js": "npm:^1.10.1"
     "@logdna/tail-file": "npm:^2.0.6"
@@ -678,7 +678,7 @@ __metadata:
       optional: true
     typescript:
       optional: true
-  checksum: 10c0/f41a6cbbed658800acecf1af277547c0b476ab43765a9d00391fc704c7f26eec81e3d1a11de21dc195030981b8e53428bb45237b37a3f0ac9e1c330a9923e82c
+  checksum: 10c0/1ecdc47ee3b3db26b2923a516ab18d3f791d431367f4962d06360bde990619115472c660c431037b75d35ef4cbcb6ee3a7a54fb4cd0c6e840eed22c7f5c0340e
   languageName: node
   linkType: hard
 
@@ -870,12 +870,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:22.5.5":
-  version: 22.5.5
-  resolution: "@types/node@npm:22.5.5"
+"@types/node@npm:22.7.1":
+  version: 22.7.1
+  resolution: "@types/node@npm:22.7.1"
   dependencies:
     undici-types: "npm:~6.19.2"
-  checksum: 10c0/ead9495cfc6b1da5e7025856dcce2591e9bae635357410c0d2dd619fce797d2a1d402887580ca4b336cb78168b195224869967de370a23f61663cf1e4836121c
+  checksum: 10c0/5647181455d543992f5e93165e7ad2ca0e97402e748a1209c07135320b6f220ffb5b2531b0412d6d33bb3173b5bcd9418899d9fa6f04596a5ec9f338b2f37992
   languageName: node
   linkType: hard
 
@@ -1366,9 +1366,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "ginetta-tonic-festival@workspace:."
   dependencies:
-    "@pulumi/cloudflare": "npm:5.39.0"
-    "@pulumi/pulumi": "npm:3.133.0"
-    "@types/node": "npm:22.5.5"
+    "@pulumi/cloudflare": "npm:5.39.1"
+    "@pulumi/pulumi": "npm:3.134.0"
+    "@types/node": "npm:22.7.1"
   languageName: unknown
   linkType: soft
 

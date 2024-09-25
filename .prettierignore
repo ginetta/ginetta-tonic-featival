@@ -4,6 +4,7 @@ node_modules/
 
 src/images/
 src/videos/
+src/js/photoswipe/
 
 # Webflow
 *webflow.js
