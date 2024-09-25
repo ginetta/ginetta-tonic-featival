@@ -1,13 +1,22 @@
 {
   "name": "ginetta-tonic-festival",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ginetta/ginetta-tonic-festival.git"
+  },
   "homepage": "https://featival.ginetta.net/",
   "description": "Website for the Ginetta TONIC Festival",
+  "keywords": [
+    "ginetta",
+    "festival",
+    "cloudflare pages"
+  ],
   "version": "2.0.0",
   "author": "@mountainash",
   "contributors": [
     "@nlfonseca"
   ],
-  "private": true,
   "scripts": {
     "dev": "wrangler pages dev",
     "prepare": "husky",
@@ -23,14 +32,8 @@
     "prettier": "^3.3.3",
     "wrangler": "3.78.9"
   },
-  "keywords": [
-    "ginetta",
-    "festival",
-    "cloudflare pages"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:ginetta/ginetta-tonic-festival.git"
-  },
-  "packageManager": "yarn@4.5.0"
+  "packageManager": "yarn@4.5.0",
+  "engines": {
+    "node": ">=20.x"
+  }
 }

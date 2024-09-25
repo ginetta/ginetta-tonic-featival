@@ -14,5 +14,8 @@
     "@pulumi/cloudflare": "5.39.1",
     "@pulumi/pulumi": "3.134.0"
   },
-  "packageManager": "yarn@4.5.0"
+  "packageManager": "yarn@4.5.0",
+  "engines": {
+    "node": ">=20.x"
+  }
 }
