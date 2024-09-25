@@ -9,7 +9,7 @@
     "nextjs",
     "nlfonseca",
     "Opengraph",
-    "preprod",
+    "photoswipe",
     "Pulumi",
     "Rieterstrasse",
     "timeinterval",
@@ -20,7 +20,7 @@
   "editor.formatOnSave": true,
   "prettier.prettierPath": "./node_modules/prettier",
   "prettier.requireConfig": true,
-  "[html]": {
+  "[html,json,javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
