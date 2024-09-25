@@ -62,6 +62,9 @@ jobs:
     name: Deploy website - Cloudflare Pages ⚡
     needs: pulumi
     uses: ./.github/workflows/pages-deployment.yaml
+    permissions:
+      contents: read
+      deployments: write
     with:
       CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
     secrets:
