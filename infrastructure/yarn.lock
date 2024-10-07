@@ -636,9 +636,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pulumi/pulumi@npm:3.134.0":
-  version: 3.134.0
-  resolution: "@pulumi/pulumi@npm:3.134.0"
+"@pulumi/pulumi@npm:3.135.0":
+  version: 3.135.0
+  resolution: "@pulumi/pulumi@npm:3.135.0"
   dependencies:
     "@grpc/grpc-js": "npm:^1.10.1"
     "@logdna/tail-file": "npm:^2.0.6"
@@ -678,7 +678,7 @@ __metadata:
       optional: true
     typescript:
       optional: true
-  checksum: 10c0/1ecdc47ee3b3db26b2923a516ab18d3f791d431367f4962d06360bde990619115472c660c431037b75d35ef4cbcb6ee3a7a54fb4cd0c6e840eed22c7f5c0340e
+  checksum: 10c0/3a9476b26d7e84b06637ced781411a74fc94fd924dbe1f23ea095df187f43df0791f5f26961d3cea82c20f37bb699511d52297792c8e91f394b76b1629cf9a7a
   languageName: node
   linkType: hard
 
@@ -1367,7 +1367,7 @@ __metadata:
   resolution: "ginetta-tonic-festival@workspace:."
   dependencies:
     "@pulumi/cloudflare": "npm:5.39.1"
-    "@pulumi/pulumi": "npm:3.134.0"
+    "@pulumi/pulumi": "npm:3.135.0"
     "@types/node": "npm:22.7.1"
   languageName: unknown
   linkType: soft
