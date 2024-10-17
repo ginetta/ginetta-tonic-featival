@@ -1,10 +1,19 @@
 name: Website Deploy ⚡
 
 on:
-  push:
-    branches:
-      - prod
-      - preprod
+  # Allows triggering from another Workflow
+  workflow_call:
+    inputs:
+      CLOUDFLARE_ACCOUNT_ID:
+        type: string
+        required: true
+    secrets:
+      CLOUDFLARE_API_TOKEN:
+        required: true
+      SHARED_GITHUB_TOKEN:
+        required: true
+
+  # Allows triggering manually from the GitHub Actions tab
   workflow_dispatch:
 
 jobs:
