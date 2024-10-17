@@ -31,7 +31,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
     <style>
       html {
-        scroll-behavior: smooth; /* nice for the navigation links */
+        scroll-behavior: smooth;
+        /* nice for the navigation links */
       }
 
       @media screen and (prefers-reduced-motion: reduce) {
@@ -78,22 +79,36 @@
         0% {
           opacity: 0;
         }
+
         100% {
           opacity: 1;
         }
       }
+
       @keyframes fadeOut {
         10% {
           opacity: 1;
         }
+
         100% {
           opacity: 0;
         }
       }
 
       /* 2024 Year customisations */
+      .agenda {
+        text-transform: uppercase;
+      }
+
       .counter-number.agenda {
         font-weight: 500;
+      }
+
+      #section-creatives img {
+        display: block;
+        aspect-ratio: 1 / 1;
+        max-width: 170px;
+        max-height: 170px;
       }
 
       /* Image hover effect */
@@ -139,31 +154,38 @@
         -moz-box-sizing: border-box;
         box-sizing: border-box;
       }
+
       body {
         margin: 0;
         min-height: 100vh;
       }
+
       nav li {
         list-style: none;
       }
+
       h1 {
         margin-top: 20px;
         margin-bottom: 10px;
       }
+
       p {
         margin-top: 0;
         margin-bottom: 10px;
       }
+
       img {
         max-width: 100%;
         vertical-align: middle;
         display: inline-block;
       }
+
       .w-container {
         margin-left: auto;
         margin-right: auto;
         max-width: 940px;
       }
+
       .w-container:before,
       .w-container:after {
         content: ' ';
@@ -173,13 +195,16 @@
         grid-column-end: 2;
         grid-row-end: 2;
       }
+
       .w-container:after {
         clear: both;
       }
+
       .w-container .w-row {
         margin-left: -10px;
         margin-right: -10px;
       }
+
       .w-row:before,
       .w-row:after {
         content: ' ';
@@ -189,13 +214,16 @@
         grid-column-end: 2;
         grid-row-end: 2;
       }
+
       .w-row:after {
         clear: both;
       }
+
       .w-row .w-row {
         margin-left: 0;
         margin-right: 0;
       }
+
       .w-col {
         position: relative;
         float: left;
@@ -204,26 +232,32 @@
         padding-left: 10px;
         padding-right: 10px;
       }
+
       .w-col .w-col {
         padding-left: 0;
         padding-right: 0;
       }
+
       .w-col-6 {
         width: 50%;
       }
+
       .w-button {
         display: inline-block;
         text-decoration: none;
       }
+
       .button-primary:hover {
         background: #f2fc3e;
         transition: all 0.3s;
       }
+
       .button-secondary:hover {
         border-color: #f2fc3e;
         color: #f2fc3e;
         transition: all 0.3s;
       }
+
       .subtitle.typed {
         white-space: normal;
       }
@@ -249,6 +283,7 @@
           transition: all 1s;
           mix-blend-mode: screen;
         }
+
         &:hover span {
           border-color: #fff;
           box-shadow: 0 0 7px 5px currentcolor;
@@ -259,10 +294,12 @@
         color: #f00;
         animation: 4.5s ease-in-out red-shifter infinite;
       }
+
       #green {
         color: #0f0;
         animation: 4.5s ease-in-out green-shifter infinite;
       }
+
       #blue {
         color: #00f;
         animation: 4.5s ease-in-out blue-shifter infinite;
@@ -273,6 +310,7 @@
           scale: 1.25;
           rotate: 180deg;
         }
+
         to {
           rotate: 360deg;
         }
@@ -283,11 +321,13 @@
           transform: translate(-30%, -30%);
         }
       }
+
       @keyframes blue-shifter {
         50% {
           transform: translate(0, 30%);
         }
       }
+
       @keyframes green-shifter {
         50% {
           transform: translate(30%, -30%);
@@ -299,22 +339,26 @@
           max-width: 728px;
         }
       }
+
       @media screen and (max-width: 767px) {
         .w-row,
         .w-container .w-row {
           margin-left: 0;
           margin-right: 0;
         }
+
         .w-col {
           width: 100%;
           left: auto;
           right: auto;
         }
       }
+
       @media screen and (max-width: 479px) {
         .w-container {
           max-width: none;
         }
+
         .w-col {
           width: 100%;
         }
@@ -342,6 +386,7 @@
     <link href="/images/tonic-favicon.png" rel="shortcut icon" type="image/x-icon" />
     <link href="/images/tonic-apple-touch-icon.png" rel="apple-touch-icon" />
   </head>
+
   <body class="body">
     <div class="wrapper">
       <header id="nav" class="sticky-nav">
@@ -449,77 +494,57 @@
         <div id="section-agenda" class="base-div-full">
           <div class="base-container w-container">
             <h1 class="heading-1">AGENDA</h1>
-            <div class="subtitle">
+            <p class="subtitle">
               Evening talks then boogie into the night with delicious food and fancy drinks along
               the way.
-            </div>
+            </p>
           </div>
           <div class="base-container w-container">
-            <div data-hover="false" data-delay="0" class="accordion-toggle w-dropdown">
-              <div class="dropdown-toggle w-dropdown-toggle">
-                <div class="dropdown-title-text">
-                  <div class="counter-number agenda">17:00</div>
-                  <div class="div-agenda">
-                    <div class="heading-3 agenda">START &amp; EXHIBITIONS</div>
-                    <div class="subtitle typed">
-                      Start with a tonic, good conversations and explore beautiful exhibition with a
-                      welcome snack and drinks.
-                    </div>
-                  </div>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div class="counter-number agenda">17:00</div>
+              <div class="div-agenda">
+                <div class="heading-3 agenda">START &amp; EXHIBITIONS</div>
+                <div class="subtitle typed">
+                  Start with a tonic, good conversations and explore beautiful exhibition with a
+                  welcome snack and drinks.
                 </div>
               </div>
             </div>
-            <div data-hover="false" data-delay="0" class="accordion-toggle w-dropdown">
-              <div class="dropdown-toggle w-dropdown-toggle">
-                <div class="dropdown-title-text">
-                  <div class="counter-number agenda">18:00</div>
-                  <div class="div-agenda">
-                    <div class="heading-3 agenda">TALKS</div>
-                    <div class="subtitle typed">
-                      Listen to talks from inspiring creatives within the disciplines of design, art
-                      &amp; music.
-                    </div>
-                  </div>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div class="counter-number agenda">18:00</div>
+              <div class="div-agenda">
+                <div class="heading-3 agenda">TALKS</div>
+                <div class="subtitle typed">
+                  Listen to talks from inspiring creatives within the disciplines of design, art
+                  &amp; music.
                 </div>
               </div>
             </div>
-            <div data-hover="false" data-delay="0" class="accordion-toggle w-dropdown">
-              <div class="dropdown-toggle w-dropdown-toggle">
-                <div class="dropdown-title-text">
-                  <div class="counter-number agenda">19:30</div>
-                  <div class="div-agenda">
-                    <div class="heading-3 agenda">EXHIBITIONS &amp; ARTIST MINI-TALKS</div>
-                    <div class="subtitle typed">
-                      Enter the Artist's world - hear first-hand from the creators about their works
-                      and inspirations.
-                    </div>
-                  </div>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div class="counter-number agenda">19:30</div>
+              <div class="div-agenda">
+                <div class="heading-3 agenda">EXHIBITIONS &amp; ARTIST MINI-TALKS</div>
+                <div class="subtitle typed">
+                  Enter the Artist's world - hear first-hand from the creators about their works and
+                  inspirations.
                 </div>
               </div>
             </div>
-            <div data-hover="false" data-delay="0" class="accordion-toggle w-dropdown">
-              <div class="dropdown-toggle w-dropdown-toggle">
-                <div class="dropdown-title-text">
-                  <div class="counter-number agenda">21:00</div>
-                  <div class="div-agenda">
-                    <div class="heading-3 agenda">PERFORMANCES</div>
-                    <div class="subtitle typed">
-                      Lights, visuals &amp; music merge to create an immersive experience.
-                    </div>
-                  </div>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div class="counter-number agenda">21:00</div>
+              <div class="div-agenda">
+                <div class="heading-3 agenda">PERFORMANCES</div>
+                <div class="subtitle typed">
+                  Lights, visuals &amp; music merge to create an immersive experience.
                 </div>
               </div>
             </div>
-            <div data-hover="false" data-delay="0" class="accordion-toggle last w-dropdown">
-              <div class="dropdown-toggle w-dropdown-toggle">
-                <div class="dropdown-title-text">
-                  <div class="counter-number agenda">00:00</div>
-                  <div class="div-agenda">
-                    <div class="heading-3 agenda">CLOSING TIME</div>
-                    <div class="subtitle typed">
-                      The official closing time, but we won&#x27;t stop a good time.
-                    </div>
-                  </div>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div class="counter-number agenda">00:00</div>
+              <div class="div-agenda">
+                <div class="heading-3 agenda">CLOSING TIME</div>
+                <div class="subtitle typed">
+                  The official closing time, but we won&#x27;t stop a good time.
                 </div>
               </div>
             </div>
@@ -530,20 +555,203 @@
       <div class="base-section">
         <div id="section-creatives" class="base-div-full">
           <div class="base-container w-container">
-            <h1 class="heading-1">BE A PART OF GINETTA TONIC</h1>
-            <p class="body-text sandwich">
-              Call for creatives! If you are passionate about design, music or art - this is your
-              chance to share a talk, workshop or do a performance.
+            <h1 class="heading-1">THE CREATIVES</h1>
+            <p class="subtitle">
+              LOCAL AND FAR, we gathered a few people that make our hearts and feet beat
             </p>
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdzZAuK8HHQI28uso5PZWZhLAq9VJocYb2nRPXYIbIPCj_UmQ/viewform?usp=sf_link"
-              target="_blank"
-              class="button-primary w-button"
-              >Submit today</a
-            >
+          </div>
+          <div class="base-container w-container">
+            <h2 class="heading-3">Speakers</h2>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div>
+                <img
+                  src="/images/2024-creative-Jiske-Van-Straaten-Niklas-Mellmann.webp"
+                  alt="Jiske Van Straaten & Niklas Mellmann"
+                  width="245"
+                  height="245"
+                  loading="lazy"
+                />
+              </div>
+              <div class="div-agenda">
+                <h3 class="heading-3 agenda">Jiske Van Straaten & Niklas Mellmann</h3>
+                <div class="subtitle typed">Rhythms Of Reality</div>
+              </div>
+            </div>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div>
+                <img
+                  src="/images/2024-creative-Erika-Marthins.webp"
+                  alt="Erika Marthins"
+                  width="245"
+                  height="245"
+                  loading="lazy"
+                />
+              </div>
+              <div class="div-agenda">
+                <h3 class="heading-3 agenda">Erika Marthins</h3>
+                <div class="subtitle typed">Augmented Food</div>
+              </div>
+            </div>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div>
+                <img
+                  src="/images/2024-creative-Raksmey-Oum-Stefan-Wittwer.webp"
+                  alt="Raksmey Oum & Stefan Wittwer"
+                  width="245"
+                  height="245"
+                  loading="lazy"
+                />
+              </div>
+              <div class="div-agenda">
+                <h3 class="heading-3 agenda">Raksmey Oum & Stefan Wittwer</h3>
+                <div class="subtitle typed">Rethinking products that suck</div>
+              </div>
+            </div>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div>
+                <img
+                  src="/images/2024-creative-Yann-Bartal.webp"
+                  alt="Yann Bartal"
+                  width="245"
+                  height="245"
+                  loading="lazy"
+                />
+              </div>
+              <div class="div-agenda">
+                <h3 class="heading-3 agenda">Yann Bartal</h3>
+                <div class="subtitle typed">Critical Analysis of AI</div>
+              </div>
+            </div>
+          </div>
+          <div class="base-container w-container">
+            <h2 class="heading-3">Artists</h2>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div>
+                <img
+                  src="/images/2024-creative-Tanja-Rey-Samantha-Borromeo.webp"
+                  alt="Tanja Rey & Samantha Borromeo"
+                  width="245"
+                  height="245"
+                  loading="lazy"
+                />
+              </div>
+              <div class="div-agenda">
+                <h3 class="heading-3 agenda">Tanja Rey & Samantha Borromeo</h3>
+                <div class="subtitle typed">AI Installation</div>
+              </div>
+            </div>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div>
+                <img
+                  src="/images/2024-creative-Nathalie-Ferrari.webp"
+                  alt="Nathalie Ferrari"
+                  width="245"
+                  height="245"
+                  loading="lazy"
+                />
+              </div>
+              <div class="div-agenda">
+                <h3 class="heading-3 agenda">Nathalie Ferrari</h3>
+                <div class="subtitle typed">Art in Code</div>
+              </div>
+            </div>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div>
+                <img
+                  src="/images/2024-creative-Juliana-Schneider.webp"
+                  alt="Juliana Schneider"
+                  width="245"
+                  height="245"
+                  loading="lazy"
+                />
+              </div>
+              <div class="div-agenda">
+                <h3 class="heading-3 agenda">Juliana Schneider</h3>
+                <div class="subtitle typed">Digital Degrowth Workshop</div>
+              </div>
+            </div>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div>
+                <img
+                  src="/images/2024-creative-Vaclav-Volhejn.webp"
+                  alt="Vaclav Volhejn"
+                  width="245"
+                  height="245"
+                  loading="lazy"
+                />
+              </div>
+              <div class="div-agenda">
+                <h3 class="heading-3 agenda">Vaclav Volhejn</h3>
+                <div class="subtitle typed">Interactive Installations</div>
+              </div>
+            </div>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div>
+                <img
+                  src="/images/2024-creative-Erika-Marthins-Daniele-Barberio.webp"
+                  alt="Erika Marthins & Daniele Barberio"
+                  width="245"
+                  height="245"
+                  loading="lazy"
+                />
+              </div>
+              <div class="div-agenda">
+                <h3 class="heading-3 agenda">Erika Marthins & Daniele Barberio</h3>
+                <div class="subtitle typed">Interactive "Face Mirrors"</div>
+              </div>
+            </div>
+          </div>
+          <div class="base-container w-container">
+            <h2 class="heading-3">Musicians</h2>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div>
+                <img
+                  src="/images/2024-creative-Lou-Combo.webp"
+                  alt="Lou Combo"
+                  width="245"
+                  height="245"
+                  loading="lazy"
+                />
+              </div>
+              <div class="div-agenda">
+                <h3 class="heading-3 agenda">Lou Combo</h3>
+                <div class="subtitle typed">House, Tech House, Afro</div>
+              </div>
+            </div>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div>
+                <img
+                  src="/images/2024-creative-Lazzzer.webp"
+                  alt="Lazzzer"
+                  width="245"
+                  height="245"
+                  loading="lazy"
+                />
+              </div>
+              <div class="div-agenda">
+                <h3 class="heading-3 agenda">Lazzzer</h3>
+                <div class="subtitle typed">Electronica, House, Minimal</div>
+              </div>
+            </div>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div>
+                <img
+                  src="/images/2024-creative-Rob-Was-Here.webp"
+                  alt="Rob Was Here"
+                  width="245"
+                  height="245"
+                  loading="lazy"
+                />
+              </div>
+              <div class="div-agenda">
+                <h3 class="heading-3 agenda">Rob Was Here</h3>
+                <div class="subtitle typed">Disco, House, Open Format</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
       <div class="base-section">
         <div id="section-sponsors" class="base-div-full">
           <div class="base-container w-container">
