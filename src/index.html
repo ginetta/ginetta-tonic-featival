@@ -6,18 +6,18 @@
     <meta charset="utf-8" />
     <title>Ginetta Tonic Festival</title>
     <meta
-      content="NOVEMBER 8, 2024 - We explore the intersection of art, design and music to inspire and foster creativity for the local community of creators."
+      content="We explore the intersection of art, design and music to inspire and foster creativity for the local community of creators."
       name="description"
     />
     <meta content="Ginetta Tonic Festival" property="og:title" />
     <meta
-      content="NOVEMBER 8, 2024 - We explore the intersection of art, design and music to inspire and foster creativity for the local community of creators."
+      content="We explore the intersection of art, design and music to inspire and foster creativity for the local community of creators."
       property="og:description"
     />
     <meta content="/images/Opengraph_Ginetta_Tonic_Festival.jpg" property="og:image" />
     <meta content="Ginetta Tonic Festival" property="twitter:title" />
     <meta
-      content="NOVEMBER 8, 2024 - We explore the intersection of art, design and music to inspire and foster creativity for the local community of creators."
+      content="We explore the intersection of art, design and music to inspire and foster creativity for the local community of creators."
       property="twitter:description"
     />
     <meta content="/images/Opengraph_Ginetta_Tonic_Festival.jpg" property="twitter:image" />
@@ -412,14 +412,6 @@
             <li class="list-item-4">
               <a href="#section-location" class="nav-link">LOCATION</a>
             </li>
-            <li class="list-item-6">
-              <a
-                href="https://eventfrog.ch/en/p/festivals/art-culture/ginetta-tonic-festival-2024-7214568949165276946.html"
-                target="_blank"
-                class="nav-link primary"
-                >GET TICKETS</a
-              >
-            </li>
           </ul>
         </nav>
       </header>
@@ -432,40 +424,9 @@
           <div class="short-info header w-row">
             <div class="column w-col w-col-6">
               <div class="paragraph-emphasis">FESTIVAL OF CREATIVES</div>
-              <div class="subtitle">NOVEMBER 8</div>
             </div>
             <div class="column-2 w-col w-col-6">
               <div class="paragraph-emphasis">IN ART, DESIGN AND MUSIC</div>
-              <div class="subtitle">@ GINETTA ZURICH</div>
-            </div>
-          </div>
-        </div>
-        <a
-          href="https://eventfrog.ch/en/p/festivals/art-culture/ginetta-tonic-festival-2024-7214568949165276946.html"
-          target="_blank"
-          class="button-primary header w-button"
-          >Get your Tonic ticket</a
-        >
-        <div class="base-div timer">
-          <div id="js-clock" class="w-layout-grid grid">
-            <div class="counter-div">
-              <div id="js-clock-days" class="counter-number">00</div>
-              <div class="counter-description">DAYS</div>
-            </div>
-            <div class="counter-divider">:</div>
-            <div class="counter-div">
-              <div id="js-clock-hours" class="counter-number">00</div>
-              <div class="counter-description">HOURS</div>
-            </div>
-            <div class="counter-divider">:</div>
-            <div class="counter-div">
-              <div id="js-clock-minutes" class="counter-number">00</div>
-              <div class="counter-description">MIN</div>
-            </div>
-            <div class="counter-divider">:</div>
-            <div class="counter-div">
-              <div id="js-clock-seconds" class="counter-number">00</div>
-              <div class="counter-description">SEC</div>
             </div>
           </div>
         </div>
@@ -1131,12 +1092,6 @@
               Join us in our second annual Ginetta Tonic Festival. Bring together the community, be
               inspired, create, and enjoy.
             </p>
-            <a
-              href="https://eventfrog.ch/en/p/festivals/art-culture/ginetta-tonic-festival-2024-7214568949165276946.html"
-              target="_blank"
-              class="button-primary w-button"
-              >Get your Tonic ticket</a
-            >
           </div>
         </div>
       </div>
@@ -1144,11 +1099,9 @@
         <div class="short-info footer w-row">
           <div class="column w-col w-col-6">
             <div class="paragraph-emphasis">FESTIVAL OF CREATIVES</div>
-            <div class="subtitle">NOVEMBER 8</div>
           </div>
           <div class="column-2 w-col w-col-6">
             <div class="paragraph-emphasis">IN ART, DESIGN AND MUSIC</div>
-            <div class="subtitle">@ GINETTA ZURICH</div>
           </div>
         </div>
         <div class="divider"></div>
@@ -1195,54 +1148,5 @@
         </div>
       </footer>
     </div>
-    <script>
-      /* COUNTDOWN TIMER */
-      var deadline = '2024/11/08 17:00';
-      function pad(num, size) {
-        var s = '0' + num;
-        return s.substr(s.length - size);
-      }
-      // fixes "Date.parse(date)" on safari
-      function parseDate(date) {
-        const parsed = Date.parse(date);
-        if (!isNaN(parsed)) return parsed;
-        return Date.parse(date.replace(/-/g, '/').replace(/[a-z]+/gi, ' '));
-      }
-      function getTimeRemaining(endtime) {
-        let total = parseDate(endtime) - Date.parse(new Date());
-        let seconds = Math.floor((total / 1000) % 60);
-        let minutes = Math.floor((total / 1000 / 60) % 60);
-        let hours = Math.floor((total / (1000 * 60 * 60)) % 24);
-        let days = Math.floor(total / (1000 * 60 * 60 * 24));
-        return { total, days, hours, minutes, seconds };
-      }
-      function clock(id, endtime) {
-        const updateDom = (time) => {
-          let days = document.getElementById(id + '-days');
-          let hours = document.getElementById(id + '-hours');
-          let minutes = document.getElementById(id + '-minutes');
-          let seconds = document.getElementById(id + '-seconds');
-
-          days.innerHTML = time.days > 99 ? pad(time.days, 3) : pad(time.days, 2);
-          hours.innerHTML = pad(time.hours, 2);
-          minutes.innerHTML = pad(time.minutes, 2);
-          seconds.innerHTML = pad(time.seconds, 2);
-        };
-
-        var timeinterval = setInterval(() => {
-          var time = getTimeRemaining(endtime);
-
-          if (time.total <= 0) {
-            clearInterval(timeinterval);
-          } else {
-            updateDom(time);
-          }
-        }, 1000);
-
-        // run on load (not just after interval)
-        updateDom(getTimeRemaining(endtime));
-      }
-      clock('js-clock', deadline);
-    </script>
   </body>
 </html>
