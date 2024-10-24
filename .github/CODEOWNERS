@@ -1,0 +1,7 @@
+# The owners will be put automatically as reviewer for any pr opened on this repo
+
+## <https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners>
+
+@mountainash
+/infrastructure @mountainash
+/.github/workflows @mountainash

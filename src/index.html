@@ -6,18 +6,18 @@
     <meta charset="utf-8" />
     <title>Ginetta Tonic Festival</title>
     <meta
-      content="NOVEMBER 8, 2024 - We explore the intersection of art, design and music to inspire and foster creativity for the local community of creators."
+      content="We explore the intersection of art, design and music to inspire and foster creativity for the local community of creators."
       name="description"
     />
     <meta content="Ginetta Tonic Festival" property="og:title" />
     <meta
-      content="NOVEMBER 8, 2024 - We explore the intersection of art, design and music to inspire and foster creativity for the local community of creators."
+      content="We explore the intersection of art, design and music to inspire and foster creativity for the local community of creators."
       property="og:description"
     />
     <meta content="/images/Opengraph_Ginetta_Tonic_Festival.jpg" property="og:image" />
     <meta content="Ginetta Tonic Festival" property="twitter:title" />
     <meta
-      content="NOVEMBER 8, 2024 - We explore the intersection of art, design and music to inspire and foster creativity for the local community of creators."
+      content="We explore the intersection of art, design and music to inspire and foster creativity for the local community of creators."
       property="twitter:description"
     />
     <meta content="/images/Opengraph_Ginetta_Tonic_Festival.jpg" property="twitter:image" />
@@ -27,11 +27,12 @@
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
     <link rel="stylesheet" href="/js/photoswipe/dist/photoswipe.css" />
-    <link href="css/ginetta-tonic-festival.webflow.css" rel="stylesheet" type="text/css" />
+    <link href="/css/ginetta-tonic-festival.webflow.css" rel="stylesheet" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
     <style>
       html {
-        scroll-behavior: smooth; /* nice for the navigation links */
+        scroll-behavior: smooth;
+        /* nice for the navigation links */
       }
 
       @media screen and (prefers-reduced-motion: reduce) {
@@ -78,22 +79,36 @@
         0% {
           opacity: 0;
         }
+
         100% {
           opacity: 1;
         }
       }
+
       @keyframes fadeOut {
         10% {
           opacity: 1;
         }
+
         100% {
           opacity: 0;
         }
       }
 
       /* 2024 Year customisations */
+      .agenda {
+        text-transform: uppercase;
+      }
+
       .counter-number.agenda {
         font-weight: 500;
+      }
+
+      #section-creatives img {
+        display: block;
+        aspect-ratio: 1 / 1;
+        max-width: 170px;
+        max-height: 170px;
       }
 
       /* Image hover effect */
@@ -139,31 +154,38 @@
         -moz-box-sizing: border-box;
         box-sizing: border-box;
       }
+
       body {
         margin: 0;
         min-height: 100vh;
       }
+
       nav li {
         list-style: none;
       }
+
       h1 {
         margin-top: 20px;
         margin-bottom: 10px;
       }
+
       p {
         margin-top: 0;
         margin-bottom: 10px;
       }
+
       img {
         max-width: 100%;
         vertical-align: middle;
         display: inline-block;
       }
+
       .w-container {
         margin-left: auto;
         margin-right: auto;
         max-width: 940px;
       }
+
       .w-container:before,
       .w-container:after {
         content: ' ';
@@ -173,13 +195,16 @@
         grid-column-end: 2;
         grid-row-end: 2;
       }
+
       .w-container:after {
         clear: both;
       }
+
       .w-container .w-row {
         margin-left: -10px;
         margin-right: -10px;
       }
+
       .w-row:before,
       .w-row:after {
         content: ' ';
@@ -189,13 +214,16 @@
         grid-column-end: 2;
         grid-row-end: 2;
       }
+
       .w-row:after {
         clear: both;
       }
+
       .w-row .w-row {
         margin-left: 0;
         margin-right: 0;
       }
+
       .w-col {
         position: relative;
         float: left;
@@ -204,26 +232,32 @@
         padding-left: 10px;
         padding-right: 10px;
       }
+
       .w-col .w-col {
         padding-left: 0;
         padding-right: 0;
       }
+
       .w-col-6 {
         width: 50%;
       }
+
       .w-button {
         display: inline-block;
         text-decoration: none;
       }
+
       .button-primary:hover {
         background: #f2fc3e;
         transition: all 0.3s;
       }
+
       .button-secondary:hover {
         border-color: #f2fc3e;
         color: #f2fc3e;
         transition: all 0.3s;
       }
+
       .subtitle.typed {
         white-space: normal;
       }
@@ -249,6 +283,7 @@
           transition: all 1s;
           mix-blend-mode: screen;
         }
+
         &:hover span {
           border-color: #fff;
           box-shadow: 0 0 7px 5px currentcolor;
@@ -259,10 +294,12 @@
         color: #f00;
         animation: 4.5s ease-in-out red-shifter infinite;
       }
+
       #green {
         color: #0f0;
         animation: 4.5s ease-in-out green-shifter infinite;
       }
+
       #blue {
         color: #00f;
         animation: 4.5s ease-in-out blue-shifter infinite;
@@ -273,6 +310,7 @@
           scale: 1.25;
           rotate: 180deg;
         }
+
         to {
           rotate: 360deg;
         }
@@ -283,11 +321,13 @@
           transform: translate(-30%, -30%);
         }
       }
+
       @keyframes blue-shifter {
         50% {
           transform: translate(0, 30%);
         }
       }
+
       @keyframes green-shifter {
         50% {
           transform: translate(30%, -30%);
@@ -299,22 +339,26 @@
           max-width: 728px;
         }
       }
+
       @media screen and (max-width: 767px) {
         .w-row,
         .w-container .w-row {
           margin-left: 0;
           margin-right: 0;
         }
+
         .w-col {
           width: 100%;
           left: auto;
           right: auto;
         }
       }
+
       @media screen and (max-width: 479px) {
         .w-container {
           max-width: none;
         }
+
         .w-col {
           width: 100%;
         }
@@ -339,9 +383,10 @@
       });
       lightbox.init();
     </script>
-    <link href="images/tonic-favicon.png" rel="shortcut icon" type="image/x-icon" />
-    <link href="images/tonic-apple-touch-icon.png" rel="apple-touch-icon" />
+    <link href="/images/tonic-favicon.png" rel="shortcut icon" type="image/x-icon" />
+    <link href="/images/tonic-apple-touch-icon.png" rel="apple-touch-icon" />
   </head>
+
   <body class="body">
     <div class="wrapper">
       <header id="nav" class="sticky-nav">
@@ -367,14 +412,6 @@
             <li class="list-item-4">
               <a href="#section-location" class="nav-link">LOCATION</a>
             </li>
-            <li class="list-item-6">
-              <a
-                href="https://eventfrog.ch/en/p/festivals/art-culture/ginetta-tonic-festival-2024-7214568949165276946.html"
-                target="_blank"
-                class="nav-link primary"
-                >GET TICKETS</a
-              >
-            </li>
           </ul>
         </nav>
       </header>
@@ -387,40 +424,9 @@
           <div class="short-info header w-row">
             <div class="column w-col w-col-6">
               <div class="paragraph-emphasis">FESTIVAL OF CREATIVES</div>
-              <div class="subtitle">NOVEMBER 8</div>
             </div>
             <div class="column-2 w-col w-col-6">
               <div class="paragraph-emphasis">IN ART, DESIGN AND MUSIC</div>
-              <div class="subtitle">@ GINETTA ZURICH</div>
-            </div>
-          </div>
-        </div>
-        <a
-          href="https://eventfrog.ch/en/p/festivals/art-culture/ginetta-tonic-festival-2024-7214568949165276946.html"
-          target="_blank"
-          class="button-primary header w-button"
-          >Get your Tonic ticket</a
-        >
-        <div class="base-div timer">
-          <div id="js-clock" class="w-layout-grid grid">
-            <div class="counter-div">
-              <div id="js-clock-days" class="counter-number">00</div>
-              <div class="counter-description">DAYS</div>
-            </div>
-            <div class="counter-divider">:</div>
-            <div class="counter-div">
-              <div id="js-clock-hours" class="counter-number">00</div>
-              <div class="counter-description">HOURS</div>
-            </div>
-            <div class="counter-divider">:</div>
-            <div class="counter-div">
-              <div id="js-clock-minutes" class="counter-number">00</div>
-              <div class="counter-description">MIN</div>
-            </div>
-            <div class="counter-divider">:</div>
-            <div class="counter-div">
-              <div id="js-clock-seconds" class="counter-number">00</div>
-              <div class="counter-description">SEC</div>
             </div>
           </div>
         </div>
@@ -449,77 +455,57 @@
         <div id="section-agenda" class="base-div-full">
           <div class="base-container w-container">
             <h1 class="heading-1">AGENDA</h1>
-            <div class="subtitle">
+            <p class="subtitle">
               Evening talks then boogie into the night with delicious food and fancy drinks along
               the way.
-            </div>
+            </p>
           </div>
           <div class="base-container w-container">
-            <div data-hover="false" data-delay="0" class="accordion-toggle w-dropdown">
-              <div class="dropdown-toggle w-dropdown-toggle">
-                <div class="dropdown-title-text">
-                  <div class="counter-number agenda">17:00</div>
-                  <div class="div-agenda">
-                    <div class="heading-3 agenda">START &amp; EXHIBITIONS</div>
-                    <div class="subtitle typed">
-                      Start with a tonic, good conversations and explore beautiful exhibition with a
-                      welcome snack and drinks.
-                    </div>
-                  </div>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div class="counter-number agenda">17:00</div>
+              <div class="div-agenda">
+                <div class="heading-3 agenda">START &amp; EXHIBITIONS</div>
+                <div class="subtitle typed">
+                  Start with a tonic, good conversations and explore beautiful exhibition with a
+                  welcome snack and drinks.
                 </div>
               </div>
             </div>
-            <div data-hover="false" data-delay="0" class="accordion-toggle w-dropdown">
-              <div class="dropdown-toggle w-dropdown-toggle">
-                <div class="dropdown-title-text">
-                  <div class="counter-number agenda">18:00</div>
-                  <div class="div-agenda">
-                    <div class="heading-3 agenda">TALKS</div>
-                    <div class="subtitle typed">
-                      Listen to talks from inspiring creatives within the disciplines of design, art
-                      &amp; music.
-                    </div>
-                  </div>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div class="counter-number agenda">18:00</div>
+              <div class="div-agenda">
+                <div class="heading-3 agenda">TALKS</div>
+                <div class="subtitle typed">
+                  Listen to talks from inspiring creatives within the disciplines of design, art
+                  &amp; music.
                 </div>
               </div>
             </div>
-            <div data-hover="false" data-delay="0" class="accordion-toggle w-dropdown">
-              <div class="dropdown-toggle w-dropdown-toggle">
-                <div class="dropdown-title-text">
-                  <div class="counter-number agenda">19:30</div>
-                  <div class="div-agenda">
-                    <div class="heading-3 agenda">EXHIBITIONS &amp; ARTIST MINI-TALKS</div>
-                    <div class="subtitle typed">
-                      Enter the Artist's world - hear first-hand from the creators about their works
-                      and inspirations.
-                    </div>
-                  </div>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div class="counter-number agenda">19:30</div>
+              <div class="div-agenda">
+                <div class="heading-3 agenda">EXHIBITIONS &amp; ARTIST MINI-TALKS</div>
+                <div class="subtitle typed">
+                  Enter the Artist's world - hear first-hand from the creators about their works and
+                  inspirations.
                 </div>
               </div>
             </div>
-            <div data-hover="false" data-delay="0" class="accordion-toggle w-dropdown">
-              <div class="dropdown-toggle w-dropdown-toggle">
-                <div class="dropdown-title-text">
-                  <div class="counter-number agenda">21:00</div>
-                  <div class="div-agenda">
-                    <div class="heading-3 agenda">PERFORMANCES</div>
-                    <div class="subtitle typed">
-                      Lights, visuals &amp; music merge to create an immersive experience.
-                    </div>
-                  </div>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div class="counter-number agenda">21:00</div>
+              <div class="div-agenda">
+                <div class="heading-3 agenda">PERFORMANCES</div>
+                <div class="subtitle typed">
+                  Lights, visuals &amp; music merge to create an immersive experience.
                 </div>
               </div>
             </div>
-            <div data-hover="false" data-delay="0" class="accordion-toggle last w-dropdown">
-              <div class="dropdown-toggle w-dropdown-toggle">
-                <div class="dropdown-title-text">
-                  <div class="counter-number agenda">00:00</div>
-                  <div class="div-agenda">
-                    <div class="heading-3 agenda">CLOSING TIME</div>
-                    <div class="subtitle typed">
-                      The official closing time, but we won&#x27;t stop a good time.
-                    </div>
-                  </div>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div class="counter-number agenda">00:00</div>
+              <div class="div-agenda">
+                <div class="heading-3 agenda">CLOSING TIME</div>
+                <div class="subtitle typed">
+                  The official closing time, but we won&#x27;t stop a good time.
                 </div>
               </div>
             </div>
@@ -530,20 +516,203 @@
       <div class="base-section">
         <div id="section-creatives" class="base-div-full">
           <div class="base-container w-container">
-            <h1 class="heading-1">BE A PART OF GINETTA TONIC</h1>
-            <p class="body-text sandwich">
-              Call for creatives! If you are passionate about design, music or art - this is your
-              chance to share a talk, workshop or do a performance.
+            <h1 class="heading-1">THE CREATIVES</h1>
+            <p class="subtitle">
+              LOCAL AND FAR, we gathered a few people that make our hearts and feet beat
             </p>
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdzZAuK8HHQI28uso5PZWZhLAq9VJocYb2nRPXYIbIPCj_UmQ/viewform?usp=sf_link"
-              target="_blank"
-              class="button-primary w-button"
-              >Submit today</a
-            >
+          </div>
+          <div class="base-container w-container">
+            <h2 class="heading-3">Speakers</h2>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div>
+                <img
+                  src="/images/2024-creative-Jiske-Van-Straaten-Niklas-Mellmann.webp"
+                  alt="Jiske Van Straaten & Niklas Mellmann"
+                  width="245"
+                  height="245"
+                  loading="lazy"
+                />
+              </div>
+              <div class="div-agenda">
+                <h3 class="heading-3 agenda">Jiske Van Straaten & Niklas Mellmann</h3>
+                <div class="subtitle typed">Rhythms Of Reality</div>
+              </div>
+            </div>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div>
+                <img
+                  src="/images/2024-creative-Erika-Marthins.webp"
+                  alt="Erika Marthins"
+                  width="245"
+                  height="245"
+                  loading="lazy"
+                />
+              </div>
+              <div class="div-agenda">
+                <h3 class="heading-3 agenda">Erika Marthins</h3>
+                <div class="subtitle typed">Augmented Food</div>
+              </div>
+            </div>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div>
+                <img
+                  src="/images/2024-creative-Raksmey-Oum-Stefan-Wittwer.webp"
+                  alt="Raksmey Oum & Stefan Wittwer"
+                  width="245"
+                  height="245"
+                  loading="lazy"
+                />
+              </div>
+              <div class="div-agenda">
+                <h3 class="heading-3 agenda">Raksmey Oum & Stefan Wittwer</h3>
+                <div class="subtitle typed">Rethinking products that suck</div>
+              </div>
+            </div>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div>
+                <img
+                  src="/images/2024-creative-Yann-Bartal.webp"
+                  alt="Yann Bartal"
+                  width="245"
+                  height="245"
+                  loading="lazy"
+                />
+              </div>
+              <div class="div-agenda">
+                <h3 class="heading-3 agenda">Yann Bartal</h3>
+                <div class="subtitle typed">Critical Analysis of AI</div>
+              </div>
+            </div>
+          </div>
+          <div class="base-container w-container">
+            <h2 class="heading-3">Artists</h2>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div>
+                <img
+                  src="/images/2024-creative-Tanja-Rey-Samantha-Borromeo.webp"
+                  alt="Tanja Rey & Samantha Borromeo"
+                  width="245"
+                  height="245"
+                  loading="lazy"
+                />
+              </div>
+              <div class="div-agenda">
+                <h3 class="heading-3 agenda">Tanja Rey & Samantha Borromeo</h3>
+                <div class="subtitle typed">AI Installation</div>
+              </div>
+            </div>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div>
+                <img
+                  src="/images/2024-creative-Nathalie-Ferrari.webp"
+                  alt="Nathalie Ferrari"
+                  width="245"
+                  height="245"
+                  loading="lazy"
+                />
+              </div>
+              <div class="div-agenda">
+                <h3 class="heading-3 agenda">Nathalie Ferrari</h3>
+                <div class="subtitle typed">Art in Code</div>
+              </div>
+            </div>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div>
+                <img
+                  src="/images/2024-creative-Juliana-Schneider.webp"
+                  alt="Juliana Schneider"
+                  width="245"
+                  height="245"
+                  loading="lazy"
+                />
+              </div>
+              <div class="div-agenda">
+                <h3 class="heading-3 agenda">Juliana Schneider</h3>
+                <div class="subtitle typed">Digital Degrowth Workshop</div>
+              </div>
+            </div>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div>
+                <img
+                  src="/images/2024-creative-Vaclav-Volhejn.webp"
+                  alt="Vaclav Volhejn"
+                  width="245"
+                  height="245"
+                  loading="lazy"
+                />
+              </div>
+              <div class="div-agenda">
+                <h3 class="heading-3 agenda">Vaclav Volhejn</h3>
+                <div class="subtitle typed">Interactive Installations</div>
+              </div>
+            </div>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div>
+                <img
+                  src="/images/2024-creative-Erika-Marthins-Daniele-Barberio.webp"
+                  alt="Erika Marthins & Daniele Barberio"
+                  width="245"
+                  height="245"
+                  loading="lazy"
+                />
+              </div>
+              <div class="div-agenda">
+                <h3 class="heading-3 agenda">Erika Marthins & Daniele Barberio</h3>
+                <div class="subtitle typed">Interactive "Face Mirrors"</div>
+              </div>
+            </div>
+          </div>
+          <div class="base-container w-container">
+            <h2 class="heading-3">Musicians</h2>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div>
+                <img
+                  src="/images/2024-creative-Lou-Combo.webp"
+                  alt="Lou Combo"
+                  width="245"
+                  height="245"
+                  loading="lazy"
+                />
+              </div>
+              <div class="div-agenda">
+                <h3 class="heading-3 agenda">Lou Combo</h3>
+                <div class="subtitle typed">House, Tech House, Afro</div>
+              </div>
+            </div>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div>
+                <img
+                  src="/images/2024-creative-Lazzzer.webp"
+                  alt="Lazzzer"
+                  width="245"
+                  height="245"
+                  loading="lazy"
+                />
+              </div>
+              <div class="div-agenda">
+                <h3 class="heading-3 agenda">Lazzzer</h3>
+                <div class="subtitle typed">Electronica, House, Minimal</div>
+              </div>
+            </div>
+            <div class="dropdown-title-text dropdown-toggle">
+              <div>
+                <img
+                  src="/images/2024-creative-Rob-Was-Here.webp"
+                  alt="Rob Was Here"
+                  width="245"
+                  height="245"
+                  loading="lazy"
+                />
+              </div>
+              <div class="div-agenda">
+                <h3 class="heading-3 agenda">Rob Was Here</h3>
+                <div class="subtitle typed">Disco, House, Open Format</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
       <div class="base-section">
         <div id="section-sponsors" class="base-div-full">
           <div class="base-container w-container">
@@ -572,6 +741,10 @@
               class="button-secondary w-button"
               >Get directions</a
             >
+          </div>
+        </div>
+        <div id="section-photos" class="base-div-full">
+          <div class="base-container w-container">
             <div class="pswp-gallery base-div" id="gallery">
               <a
                 href="/images/Ginetta_Tonic_Image_1.jpg"
@@ -581,9 +754,7 @@
                 target="_blank"
               >
                 <img
-                  src="images/Ginetta_Tonic_Image_1.jpg"
-                  loading="lazy"
-                  sizes="100vw"
+                  src="/images/Ginetta_Tonic_Image_1.jpg"
                   srcset="
                     images/Ginetta_Tonic_Image_1-p-500.jpg   500w,
                     images/Ginetta_Tonic_Image_1-p-800.jpg   800w,
@@ -591,10 +762,12 @@
                     images/Ginetta_Tonic_Image_1.jpg        1600w
                   "
                   alt="2 musicians playing music in front of a LED wall"
+                  sizes="100vw"
+                  loading="lazy"
                 />
               </a>
               <a
-                href="/images/Ginetta_Tonic_Image_2.jpg"
+                href="/images/Ginetta_Tonic_Image_2.jpeg"
                 data-pswp-width="1600"
                 data-pswp-height="900"
                 class="image"
@@ -602,58 +775,55 @@
               >
                 <img
                   src="images/Ginetta_Tonic_Image_2.jpeg"
-                  loading="lazy"
-                  sizes="100vw"
                   srcset="
-                    images/Ginetta_Tonic_Image_2-p-500.jpeg   500w,
-                    images/Ginetta_Tonic_Image_2-p-800.jpeg   800w,
-                    images/Ginetta_Tonic_Image_2-p-1080.jpeg 1080w,
-                    images/Ginetta_Tonic_Image_2.jpeg        1600w
+                    /images/Ginetta_Tonic_Image_2-p-500.jpeg   500w,
+                    /images/Ginetta_Tonic_Image_2-p-800.jpeg   800w,
+                    /images/Ginetta_Tonic_Image_2-p-1080.jpeg 1080w,
+                    /images/Ginetta_Tonic_Image_2.jpeg        1600w
                   "
                   alt="Talk to overcome fear"
-                  class="base-image"
+                  sizes="100vw"
+                  loading="lazy"
                 />
               </a>
               <a
-                href="/images/Ginetta_Tonic_Image_3.jpg"
+                href="/images/Ginetta_Tonic_Image_3.jpeg"
                 data-pswp-width="1600"
                 data-pswp-height="900"
                 class="image"
                 target="_blank"
               >
                 <img
-                  src="images/Ginetta_Tonic_Image_3.jpeg"
-                  loading="lazy"
-                  sizes="100vw"
+                  src="/images/Ginetta_Tonic_Image_3.jpeg"
                   srcset="
-                    images/Ginetta_Tonic_Image_3-p-500.jpeg   500w,
-                    images/Ginetta_Tonic_Image_3-p-800.jpeg   800w,
-                    images/Ginetta_Tonic_Image_3-p-1080.jpeg 1080w,
-                    images/Ginetta_Tonic_Image_3.jpeg        1600w
+                    /images/Ginetta_Tonic_Image_3-p-500.jpeg   500w,
+                    /images/Ginetta_Tonic_Image_3-p-800.jpeg   800w,
+                    /images/Ginetta_Tonic_Image_3-p-1080.jpeg 1080w,
+                    /images/Ginetta_Tonic_Image_3.jpeg        1600w
                   "
                   alt="An art workshop with creatives"
-                  class="base-image"
+                  sizes="100vw"
+                  loading="lazy"
                 />
               </a>
               <a
-                href="/images/Ginetta_Tonic_Image_4.jpg"
+                href="/images/Ginetta_Tonic_Image_4.jpeg"
                 data-pswp-width="1600"
                 data-pswp-height="900"
                 class="image"
                 target="_blank"
               >
                 <img
-                  src="images/Ginetta_Tonic_Image_4.jpeg"
-                  loading="lazy"
-                  sizes="100vw"
+                  src="/images/Ginetta_Tonic_Image_4.jpeg"
                   srcset="
-                    images/Ginetta_Tonic_Image_4-p-500.jpeg   500w,
-                    images/Ginetta_Tonic_Image_4-p-800.jpeg   800w,
-                    images/Ginetta_Tonic_Image_4-p-1080.jpeg 1080w,
-                    images/Ginetta_Tonic_Image_4.jpeg        1600w
+                    /images/Ginetta_Tonic_Image_4-p-500.jpeg   500w,
+                    /images/Ginetta_Tonic_Image_4-p-800.jpeg   800w,
+                    /images/Ginetta_Tonic_Image_4-p-1080.jpeg 1080w,
+                    /images/Ginetta_Tonic_Image_4.jpeg        1600w
                   "
                   alt="Art Installation with Fog and projections"
-                  class="base-image"
+                  sizes="100vw"
+                  loading="lazy"
                 />
               </a>
               <a
@@ -922,12 +1092,6 @@
               Join us in our second annual Ginetta Tonic Festival. Bring together the community, be
               inspired, create, and enjoy.
             </p>
-            <a
-              href="https://eventfrog.ch/en/p/festivals/art-culture/ginetta-tonic-festival-2024-7214568949165276946.html"
-              target="_blank"
-              class="button-primary w-button"
-              >Get your Tonic ticket</a
-            >
           </div>
         </div>
       </div>
@@ -935,18 +1099,16 @@
         <div class="short-info footer w-row">
           <div class="column w-col w-col-6">
             <div class="paragraph-emphasis">FESTIVAL OF CREATIVES</div>
-            <div class="subtitle">NOVEMBER 8</div>
           </div>
           <div class="column-2 w-col w-col-6">
             <div class="paragraph-emphasis">IN ART, DESIGN AND MUSIC</div>
-            <div class="subtitle">@ GINETTA ZURICH</div>
           </div>
         </div>
         <div class="divider"></div>
         <div class="base-div-full footer">
           <div class="footer-left-column">
             <img
-              src="images/Ginetta_Logo_Word.svg"
+              src="/images/Ginetta_Logo_Word.svg"
               loading="lazy"
               width="169"
               alt="Ginetta Logo with word"
@@ -986,54 +1148,5 @@
         </div>
       </footer>
     </div>
-    <script>
-      /* COUNTDOWN TIMER */
-      var deadline = '2024/11/08 17:00';
-      function pad(num, size) {
-        var s = '0' + num;
-        return s.substr(s.length - size);
-      }
-      // fixes "Date.parse(date)" on safari
-      function parseDate(date) {
-        const parsed = Date.parse(date);
-        if (!isNaN(parsed)) return parsed;
-        return Date.parse(date.replace(/-/g, '/').replace(/[a-z]+/gi, ' '));
-      }
-      function getTimeRemaining(endtime) {
-        let total = parseDate(endtime) - Date.parse(new Date());
-        let seconds = Math.floor((total / 1000) % 60);
-        let minutes = Math.floor((total / 1000 / 60) % 60);
-        let hours = Math.floor((total / (1000 * 60 * 60)) % 24);
-        let days = Math.floor(total / (1000 * 60 * 60 * 24));
-        return { total, days, hours, minutes, seconds };
-      }
-      function clock(id, endtime) {
-        const updateDom = (time) => {
-          let days = document.getElementById(id + '-days');
-          let hours = document.getElementById(id + '-hours');
-          let minutes = document.getElementById(id + '-minutes');
-          let seconds = document.getElementById(id + '-seconds');
-
-          days.innerHTML = time.days > 99 ? pad(time.days, 3) : pad(time.days, 2);
-          hours.innerHTML = pad(time.hours, 2);
-          minutes.innerHTML = pad(time.minutes, 2);
-          seconds.innerHTML = pad(time.seconds, 2);
-        };
-
-        var timeinterval = setInterval(() => {
-          var time = getTimeRemaining(endtime);
-
-          if (time.total <= 0) {
-            clearInterval(timeinterval);
-          } else {
-            updateDom(time);
-          }
-        }, 1000);
-
-        // run on load (not just after interval)
-        updateDom(getTimeRemaining(endtime));
-      }
-      clock('js-clock', deadline);
-    </script>
   </body>
 </html>

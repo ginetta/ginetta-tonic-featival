@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - prod
-      - preprod
+      - develop
   workflow_dispatch:
 
 env:
@@ -15,6 +15,11 @@ env:
   PULUMI_WORKING_DIRECTORY: ./infrastructure/
   CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
   CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+
+# Prevent concurrent releases
+concurrency:
+  group: websitedeployment-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   pulumi:
@@ -29,9 +34,9 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version-file: ${{ env.PULUMI_WORKING_DIRECTORY }}/package.json
           cache: yarn
-          cache-dependency-path: yarn.lock
+          cache-dependency-path: ${{ env.PULUMI_WORKING_DIRECTORY }}/yarn.lock
 
       - name: Install Dependencies 📦
         run: yarn install --immutable
@@ -39,7 +44,7 @@ jobs:
 
       - name: PR previews
         if: ${{ github.event_name == 'pull_request' }}
-        uses: pulumi/actions@v5
+        uses: pulumi/actions@v6
         with:
           command: preview
           stack-name: ${{ env.PULUMI_STACK_NAME }}
@@ -47,8 +52,21 @@ jobs:
 
       - name: Apply infrastructure update 🚀
         if: ${{ github.event_name == 'push' }}
-        uses: pulumi/actions@v5
+        uses: pulumi/actions@v6
         with:
           command: up
           stack-name: ${{ env.PULUMI_STACK_NAME }}
           work-dir: ${{ env.PULUMI_WORKING_DIRECTORY }}
+
+  call-deployment-workflow:
+    name: Deploy website - Cloudflare Pages ⚡
+    needs: pulumi
+    uses: ./.github/workflows/pages-deployment.yaml
+    permissions:
+      contents: read
+      deployments: write
+    with:
+      CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+    secrets:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      SHARED_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
