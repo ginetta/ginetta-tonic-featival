@@ -11,7 +11,7 @@
     "@types/node": "22.8.7"
   },
   "dependencies": {
-    "@pulumi/cloudflare": "5.42.0",
+    "@pulumi/cloudflare": "5.43.1",
     "@pulumi/pulumi": "3.137.0"
   },
   "packageManager": "yarn@4.5.1",

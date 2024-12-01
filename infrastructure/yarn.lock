@@ -480,12 +480,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@pulumi/cloudflare@npm:5.42.0":
-  version: 5.42.0
-  resolution: "@pulumi/cloudflare@npm:5.42.0"
+"@pulumi/cloudflare@npm:5.43.1":
+  version: 5.43.1
+  resolution: "@pulumi/cloudflare@npm:5.43.1"
   dependencies:
     "@pulumi/pulumi": "npm:^3.136.0"
-  checksum: 10c0/879feba97c14f1a856b12d03cc52f73aa442bd555c521ca62416a32aee887f390f3d66e9ecd326fa27e9330bd51de28cab1a39256cfa7e1c0ef4744877a7f8d7
+  checksum: 10c0/94ae6877274cfd2258157a371b683a6226531dfd78a1c5c72cb1a41267ba266804f26215dea299727ac7596b2840d272f738e558e681dbda67a411af23daed4e
   languageName: node
   linkType: hard
 
@@ -1219,7 +1219,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "ginetta-tonic-festival@workspace:."
   dependencies:
-    "@pulumi/cloudflare": "npm:5.42.0"
+    "@pulumi/cloudflare": "npm:5.43.1"
     "@pulumi/pulumi": "npm:3.137.0"
     "@types/node": "npm:22.8.7"
   languageName: unknown
