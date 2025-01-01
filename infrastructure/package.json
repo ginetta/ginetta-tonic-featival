@@ -8,7 +8,7 @@
     "setenv": "set -o allexport; source .env && set +o allexport"
   },
   "devDependencies": {
-    "@types/node": "22.8.7"
+    "@types/node": "22.10.3"
   },
   "dependencies": {
     "@pulumi/cloudflare": "5.42.0",
