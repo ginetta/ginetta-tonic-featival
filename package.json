@@ -26,7 +26,7 @@
     "test:formatting:fix": "prettier --write --ignore-unknown './**/*'"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.5.0",
+    "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.5.0",
     "husky": "^9.1.6",
     "prettier": "^3.3.3",
