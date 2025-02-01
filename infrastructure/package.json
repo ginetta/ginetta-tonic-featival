@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@pulumi/cloudflare": "5.48.0",
-    "@pulumi/pulumi": "3.146.0"
+    "@pulumi/pulumi": "3.148.0"
   },
   "packageManager": "yarn@4.6.0",
   "engines": {
